@@ -1,0 +1,33 @@
+/* Add this in a CSS file or style tag */
+.top-left.move {
+  left: 120px !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+.top-right.move {
+  right: 120px !important;
+  top: 0 !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+.bottom-left.move {
+  left: 120px !important;
+  bottom: 170px !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+.bottom-right.move {
+  right: 120px !important;
+  bottom: 170px !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+/* Also add a .move class for transition */
+.move {
+  transition: all 1s ease !important;
+}
