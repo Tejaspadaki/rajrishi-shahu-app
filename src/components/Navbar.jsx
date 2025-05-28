@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGlobe } from 'react-icons/fa';
+import './Navbar.css';
 
-const Navbar = ({ currentLang, switchLanguage }) => {
+const Navbar = ({ currentLang, setCurrentLang }) => {
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    if (navRef.current) {
+      navRef.current.classList.add('nav-visible');
+    }
+  }, []);
+
+  const switchLanguage = () => {
+    setCurrentLang(currentLang === 'en' ? 'mr' : 'en');
+  };
+
   const links = [
     { path: '/', en: 'Home', mr: 'मुखपृष्ठ' },
     { path: '/about', en: 'About Us', mr: 'आमच्याबद्दल' },
@@ -12,16 +26,13 @@ const Navbar = ({ currentLang, switchLanguage }) => {
   ];
 
   return (
-    <div className="bg-[#184056] w-full h-10">
-      <nav className="flex justify-between items-center flex-wrap px-4 py-2 max-w-screen-xl mx-auto">
-        <ul className="flex gap-8 flex-wrap pl-0 list-none">
-          {links.map((link, idx) => (
+    <div className="navbar-container" ref={navRef} role="navigation" aria-label="Primary"> <br />
+      <nav className="navbar">
+        <ul className="nav-links">
+          {links.map(({ path, en, mr }, idx) => (
             <li key={idx}>
-              <Link
-                to={link.path}
-                className="text-[rgba(108,64,42,0.8)] font-medium hover:text-white transition-colors duration-200"
-              >
-                {currentLang === 'en' ? link.en : link.mr}
+              <Link to={path} tabIndex={0}>
+                {currentLang === 'en' ? en : mr}
               </Link>
             </li>
           ))}
@@ -30,9 +41,10 @@ const Navbar = ({ currentLang, switchLanguage }) => {
           <button
             id="langButton"
             onClick={switchLanguage}
-            className="flex items-center gap-2 px-3 py-1 border-2 border-[#502D18] rounded-md font-medium text-white hover:bg-[#502D18] transition-colors duration-200"
+            aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
+            type="button"
           >
-            <img src="Translation.png" alt="icon" className="w-5 h-5" />
+            <FaGlobe style={{ marginRight: '8px' }} size={20} />
             {currentLang === 'en' ? 'मराठी' : 'English'}
           </button>
         </div>

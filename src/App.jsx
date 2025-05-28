@@ -1,26 +1,60 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from '../../rajrishi-shahu-app/src/components/Navbar';
-import HeroSection from '../../rajrishi-shahu-app/src/components/HeroSection';
-import './index.css';
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import './App.css'; // Your global styles
 
-// Sample pages
+// Sample page components
 const Home = ({ currentLang }) => <HeroSection currentLang={currentLang} />;
-const About = () => <h1>About Page</h1>;
-const Institutions = () => <h1>Institutions</h1>;
-const News = () => <h1>News & Events</h1>;
-const Gallery = () => <h1>Gallery</h1>;
-const Contact = () => <h1>Contact</h1>;
+
+const About = () => (
+  <div className="page">
+    <h1>About Page</h1>
+  </div>
+);
+
+const Institutions = () => (
+  <div className="page">
+    <h1>Institutions</h1>
+  </div>
+);
+
+const News = () => (
+  <div className="page">
+    <h1>News & Events</h1>
+  </div>
+);
+
+const Gallery = () => (
+  <div className="page">
+    <h1>Gallery</h1>
+  </div>
+);
+
+const Contact = () => (
+  <div className="page">
+    <h1>Contact</h1>
+  </div>
+);
 
 function App() {
-  const [lang, setLang] = useState('mr');
-  const switchLanguage = () => setLang(lang === 'en' ? 'mr' : 'en');
+  // State for current language: 'en' or 'mr'
+  const [currentLang, setCurrentLang] = useState('mr');
+
+  // Handler to toggle language between English and Marathi
+  const switchLanguage = () => {
+    setCurrentLang((prevLang) => (prevLang === 'en' ? 'mr' : 'en'));
+  };
 
   return (
     <Router>
-      <Navbar currentLang={lang} switchLanguage={switchLanguage} />
+      {/* Navbar receives currentLang and language toggle function */}
+        <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+
+
+      {/* Define routes with currentLang passed where needed */}
       <Routes>
-        <Route path="/" element={<Home currentLang={lang} />} />
+        <Route path="/" element={<Home currentLang={currentLang} />} />
         <Route path="/about" element={<About />} />
         <Route path="/institutions" element={<Institutions />} />
         <Route path="/news" element={<News />} />
