@@ -1,0 +1,51 @@
+.institutes-container {
+    font-family: 'Georgia', serif;
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .title {
+    font-size: 36px;
+    color: #3e1e00;
+    margin-bottom: 40px;
+  }
+  
+  .institutes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .institute-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .institute-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-text {
+    background-color: #f3dbad;
+    padding: 12px;
+    font-size: 15px;
+    color: #3e1e00;
+    font-weight: 500;
+    flex-grow: 1;
+  }
+  

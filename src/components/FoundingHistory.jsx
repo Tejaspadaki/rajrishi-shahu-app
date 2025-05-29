@@ -1,45 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FoundingHistory.css';
 
-const FoundingHistory = () => {
+const FoundingHistory = ({ currentLang }) => {
+  const [activeYear, setActiveYear] = useState('2020');
+
+  const handleCardClick = (year) => {
+    setActiveYear(year);
+  };
+
+  // Text content for both languages
+  const text = {
+    en: {
+      title: 'Founding History',
+      years: {
+        '2019': 'Lorem ipsum dolor sit amet consectetur...',
+        '2020': 'Lorem ipsum dolor sit amet consectetur...',
+        '2021': 'Lorem ipsum dolor sit amet consectetur...',
+      },
+      infoBlocks: [
+        { img: '/images/School Building.png', alt: 'Icon 1', text: 'Lorem ipsum dolor sit amet consectetur.' },
+        { img: '/images/Student Male.png', alt: 'Icon 2', text: 'Lorem ipsum dolor sit amet consectetur.' },
+        { img: '/images/Teacher.png', alt: 'Icon 3', text: 'Lorem ipsum dolor sit amet consectetur.' },
+        { img: '/images/Trophy.png', alt: 'Icon 4', text: 'Lorem ipsum dolor sit amet consectetur.' },
+      ],
+    },
+    mr: {
+      title: 'स्थापनेचा इतिहास',
+      years: {
+        '2019': '२०१९ मध्ये आम्ही स्थापना केली...',
+        '2020': '२०२० मध्ये महत्त्वाचे पाऊल टाकले...',
+        '2021': '२०२१ मध्ये आमचा विस्तार झाला...',
+      },
+      infoBlocks: [
+        { img: '/images/School Building.png', alt: 'आयकॉन १', text: 'शाळेचा इतिहास येथे लिहा.' },
+        { img: '/images/Student Male.png', alt: 'आयकॉन २', text: 'विद्यार्थ्यांविषयी माहिती.' },
+        { img: '/images/Teacher.png', alt: 'आयकॉन ३', text: 'शिक्षकांचा परिचय.' },
+        { img: '/images/Trophy.png', alt: 'आयकॉन ४', text: 'प्राप्ती व बक्षिसे.' },
+      ],
+    },
+  };
+
+  const t = text[currentLang] || text.en; // fallback to English
+
+  const renderCard = (year, text) => (
+    <div
+      className={`year-card ${activeYear === year ? 'active' : 'inactive'}`}
+      onClick={() => handleCardClick(year)}
+    >
+      <h3>{year}</h3>
+      <p>{text}</p>
+    </div>
+  );
+
   return (
     <div className="history-section">
-      <h2 className="history-title">Founding History</h2>
-      <div className="history-decorator">✦</div>
+      <h2 className="history-title">{t.title}</h2>
+      <div className="history-decorator"><img src="/images/6.png" alt="decorator" /></div>
 
       <div className="timeline">
-        <div className="year-card light">
-          <h3>2019</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Metus posuere in senectus etiam vivamus amet. Ultrices tortor volutpat mauris cras eu tempus blandit. Leo donec mauris adipiscing proin velit augue consequat vel.
-          </p>
-        </div>
-
-        <div className="year-card dark">
-          <h3>2020</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Metus posuere in senectus etiam vivamus amet. Ultrices tortor volutpat mauris cras eu tempus blandit. Leo donec mauris adipiscing proin velit augue consequat vel.
-          </p>
-        </div>
-
-        <div className="year-card light">
-          <h3>2021</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Metus posuere in senectus etiam vivamus amet. Ultrices tortor volutpat mauris cras eu tempus blandit. Leo donec mauris adipiscing proin velit augue consequat vel.
-          </p>
-        </div>
+        {Object.entries(t.years).map(([year, text]) => renderCard(year, text))}
       </div>
 
       <hr className="history-separator" />
 
       <div className="bottom-info">
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
-        <div className="trophy">
-          🏆
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        {t.infoBlocks.map(({ img, alt, text }, index) => (
+          <div className="info-block" key={index}>
+            <img src={img} alt={alt} />
+            <p>{text}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

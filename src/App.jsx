@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutUs from './components/AboutUs';
+import FoundingHistory from './components/FoundingHistory';
 import './App.css';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Donate from './components/Donate';
+import Institutes from './components/Institutes';
 
 // Sample page components
 const Home = ({ currentLang }) => <HeroSection currentLang={currentLang} />;
@@ -17,11 +19,6 @@ const About = ({ currentLang }) => (
   </div>
 );
 
-const Institutions = () => (
-  <div className="page">
-    <h1>Institutions</h1>
-  </div>
-);
 
 const News = () => (
   <div className="page">
@@ -43,14 +40,14 @@ function App() {
       <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
       <Routes>
         <Route path="/" element={<Home currentLang={currentLang} />} />
-        <Route path="/about" element={<About currentLang={currentLang} />} />
-        <Route path="/institutions" element={<Institutions />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<FoundingHistory  currentLang={currentLang} />} />
+        <Route path="/institutions" element={<Institutes currentLang={currentLang}/>} />
+        <Route path="/news" element={<News currentLang={currentLang}/>} />
+        <Route path="/gallery" element={<Gallery currentLang={currentLang} />} />
         <Route path="/contact" element={<Contact currentLang={currentLang}  />} />
         <Route path="/donate" element={<Donate currentLang={currentLang} />} />
       </Routes>
-      <Footer />
+      <Footer currentLang={currentLang} />
     </Router>
   );
 }
