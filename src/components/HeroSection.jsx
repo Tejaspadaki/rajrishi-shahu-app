@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Hero.css';
-import './Contact.css';
 
 const HeroSection = ({ currentLang }) => {
   const [showText, setShowText] = useState(false);
