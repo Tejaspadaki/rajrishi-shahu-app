@@ -9,9 +9,14 @@ import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Donate from './components/Donate';
 import Institutes from './components/Institutes';
+import bgImage from '/images/background.png';
 
 // Sample page components
 const Home = ({ currentLang }) => <HeroSection currentLang={currentLang} />;
+
+const appBackgroundStyle = {
+  backgroundImage: `url(${bgImage})`,
+};
 
 const About = ({ currentLang }) => (
   <div className="page">
@@ -35,7 +40,7 @@ function App() {
   const [currentLang, setCurrentLang] = useState('mr');
 
   return (
-    <div className="app-background">
+    <div className="app-background" style={appBackgroundStyle}>
       <Router>
         <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
         <Routes>
@@ -49,7 +54,7 @@ function App() {
         </Routes>
         <Footer currentLang={currentLang} />
       </Router>
-    </div>
+      </div>
   );
 }
 
