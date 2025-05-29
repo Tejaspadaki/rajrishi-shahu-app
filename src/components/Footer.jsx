@@ -14,7 +14,6 @@ const Footer = ({ currentLang }) => {
         news: 'News & Events',
         gallery: 'Gallery',
         contact: 'Contact Us',
-        trust: 'Trust Board Of Directors',
         donate: 'Donate',
       },
     },
@@ -29,7 +28,6 @@ const Footer = ({ currentLang }) => {
         news: 'बातम्या आणि कार्यक्रम',
         gallery: 'गॅलरी',
         contact: 'संपर्क करा',
-        trust: 'विश्वास बोर्ड ऑफ डायरेक्टर्स',
         donate: 'दान करा',
       },
     }
