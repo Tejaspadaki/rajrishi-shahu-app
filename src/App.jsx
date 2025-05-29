@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import AboutUs from './components/AboutUs';
 import FoundingHistory from './components/FoundingHistory';
 import './App.css';
 import Footer from './components/Footer';

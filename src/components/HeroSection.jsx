@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './Hero.css';
+import './Hero.css'; // Ensure this CSS file exists and is correctly written
 
-const HeroSection = ({ currentLang }) => {
+const HeroSection = ({ currentLang = 'en' }) => {
   const [showText, setShowText] = useState(false);
   const imageRefs = useRef([]);
   const timeouts = useRef([]);
@@ -15,8 +15,7 @@ const HeroSection = ({ currentLang }) => {
       const showTimeout = setTimeout(() => {
         img.classList.add('show');
         const moveTimeout = setTimeout(() => {
-          img.classList.add('move');
-          img.classList.add(positions[i]);
+          img.classList.add('move', positions[i]);
         }, 1000);
         timeouts.current.push(moveTimeout);
       }, i * 1000);
@@ -64,7 +63,6 @@ const HeroSection = ({ currentLang }) => {
     },
   ];
 
-  // Contact section text for EN and MR
   const contactText = {
     en: {
       contactUs: 'CONTACT US',
@@ -75,7 +73,7 @@ const HeroSection = ({ currentLang }) => {
       messagePlaceholder: 'Your Message',
       submitBtn: 'Submit',
       stayConnected: 'Stay Connected: Get in Touch with Us',
-      contactDetails: ['**********', '**********'],
+      contactDetails: ['1234567890', '9876543210'],
       donateBtn: 'DONATE',
     },
     mr: {
@@ -87,17 +85,28 @@ const HeroSection = ({ currentLang }) => {
       messagePlaceholder: 'तुमचा संदेश',
       submitBtn: 'सबमिट करा',
       stayConnected: 'संपर्कात रहा: आमच्याशी संपर्क करा',
-      contactDetails: ['**********', '**********'], // Add Marathi contact details if needed
+      contactDetails: ['१२३४५६७८९०', '९८७६५४३२१०'],
       donateBtn: 'दान करा',
     },
   };
 
+  const aadarshText = {
+    en: {
+      heading: 'Aadarsh Aai',
+      description: `Lorem ipsum dolor sit amet consectetur. Aenean in aliquet pulvinar urna nisi.`,
+    },
+    mr: {
+      heading: 'आदर्श आई',
+      description: `लोरम इप्सम डोलर सिट अमेट कॉन्सेक्टेचर.`,
+    },
+  };
+
   const t = contactText[currentLang] || contactText.en;
+  const a = aadarshText[currentLang] || aadarshText.en;
 
   return (
     <>
       <section className={`hero ${showText ? 'show-text' : ''}`}>
-        {/* Corner Images */}
         {imageData.map((item, index) => (
           <div
             key={index}
@@ -111,22 +120,12 @@ const HeroSection = ({ currentLang }) => {
           </div>
         ))}
 
-        {/* Headings */}
         <div className="hero-headings">
-          <h2>
-            "{currentLang === 'en' ? 'yashavant ho, jayavant ho' : 'यशवंत हो, जयवंत हो'}"
-          </h2>
-          <h1>
-            {currentLang === 'en'
-              ? 'Rajarshi Shahu Shikshan Sanstha'
-              : 'राजर्षी शाहू शिक्षण संस्था'}
-          </h1>
-          <h3>
-            {currentLang === 'en' ? 'Inam Dhamani, Sangli' : 'इनाम धामणी, सांगली'}
-          </h3>
+          <h2>"{currentLang === 'en' ? 'yashavant ho, jayavant ho' : 'यशवंत हो, जयवंत हो'}"</h2>
+          <h1>{currentLang === 'en' ? 'Rajarshi Shahu Shikshan Sanstha' : 'राजर्षी शाहू शिक्षण संस्था'}</h1>
+          <h3>{currentLang === 'en' ? 'Inam Dhamani, Sangli' : 'इनाम धामणी, सांगली'}</h3>
         </div>
 
-        {/* Info & Button */}
         <div className="hero-info">
           <p>
             {currentLang === 'en'
@@ -164,8 +163,8 @@ const HeroSection = ({ currentLang }) => {
 
         <hr className="section-separator" />
 
-        {/* OUR MISSION */}
-        <div className="section">
+                {/* OUR MISSION */}
+                <div className="section">
           <img
             src="/images/6.png"
             alt="Our Mission Top"
@@ -186,40 +185,53 @@ const HeroSection = ({ currentLang }) => {
           />
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section>
-        <div className="contact-page">
-          {/* Left Section */}
-          <div className="contact-left">
-            <h1>{t.contactUs}</h1>
-            <p className="info-text">{t.infoText}</p>
-
-            <form className="contact-form">
-              <input type="text" placeholder={t.namePlaceholder} />
-              <input type="email" placeholder={t.emailPlaceholder} />
-              <input type="tel" placeholder={t.mobilePlaceholder} />
-              <textarea placeholder={t.messagePlaceholder}></textarea>
-              <button type="submit" className="submit-btn">
-                {t.submitBtn}
-              </button>
-            </form>
+      <section className="aadarsh-container">
+        <div className="aadarsh-content">
+          <div className="left">
+            <div className="image-placeholder"></div>
+            <h2>{a.heading}</h2>
+            <p>{a.description}</p>
           </div>
-
-          {/* Right Section */}
-          <div className="contact-right">
-            <h2>{t.stayConnected}</h2>
-            <div className="contact-details">
-              {t.contactDetails.map((detail, i) => (
-                <p key={i}>{detail}</p>
-              ))}
+          <div className="right">
+            <div className="vertical-line">
+              <div className="horizontal-line top"></div>
+              <div className="horizontal-line upper-middle"></div>
+              <div className="horizontal-line lower-middle"></div>
+              <div className="horizontal-line bottom"></div>
             </div>
-            <div className="map-box">{/* Insert map iframe or image here if needed */}</div>
-            <a href="/donate">
-              <button className="donate-btn">{t.donateBtn}</button>
-            </a>
           </div>
         </div>
+      </section>
+
+      <section>
+      <div className="contact-page">
+      {/* Left Section */}
+      <div className="contact-left">
+        <h1>{t.contactUs}</h1>
+        <p className="info-text">{t.infoText}</p>
+
+        <form className="contact-form">
+          <input type="text" placeholder={t.namePlaceholder} />
+          <input type="email" placeholder={t.emailPlaceholder} />
+          <input type="tel" placeholder={t.mobilePlaceholder} />
+          <textarea placeholder={t.messagePlaceholder}></textarea>
+          <button type="submit" className="submit-btn">{t.submitBtn}</button>
+        </form>
+      </div>
+
+      {/* Right Section */}
+      <div className="contact-right">
+        <h2>{t.stayConnected}</h2>
+        <div className="contact-details">
+          {t.contactDetails.map((detail, i) => (
+            <p key={i}>{detail}</p>
+          ))}
+        </div>
+        <div className="map-box">{/* Insert map here if needed */}</div>
+        <a href="/donate"><button className="donate-btn">{t.donateBtn}</button></a>
+      </div>
+    </div>
+
       </section>
     </>
   );

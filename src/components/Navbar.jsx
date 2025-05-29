@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import Land from "./pages/Land";
+import Land from './pages/Land';
 
 const Navbar = ({ currentLang, setCurrentLang }) => {
   const navRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (navRef.current) {
@@ -13,8 +14,12 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
   }, []);
 
   const switchLanguage = () => {
-    console.log('Language switched');
     setCurrentLang(currentLang === 'en' ? 'mr' : 'en');
+    setMenuOpen(false); // close menu when switching language
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   const links = [
@@ -30,25 +35,36 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
     <>
       <Land />
       <nav className="navbar" ref={navRef}>
-        <ul className="nav-links">
+        <button
+          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
           {links.map(({ path, en, mr }, idx) => (
-            <li key={idx}>
+            <li key={idx} onClick={() => setMenuOpen(false)}>
               <Link to={path} tabIndex={0}>
                 {currentLang === 'en' ? en : mr}
               </Link>
             </li>
           ))}
+          <li>
+            <button
+              id="langButton"
+              onClick={switchLanguage}
+              aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
+              type="button"
+            >
+              {currentLang === 'en' ? 'मराठी' : 'English'}
+            </button>
+          </li>
         </ul>
-        <div>
-          <button
-            id="langButton"
-            onClick={switchLanguage}
-            aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
-            type="button"
-          >
-            {currentLang === 'en' ? 'मराठी' : 'English'}
-          </button>
-        </div>
       </nav>
     </>
   );

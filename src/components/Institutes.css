@@ -4,12 +4,14 @@
     text-align: center;
     max-width: 1200px;
     margin: auto;
+    animation: fadeIn 0.6s ease;
   }
   
   .title {
     font-size: 36px;
     color: #3e1e00;
     margin-bottom: 40px;
+    font-weight: bold;
   }
   
   .institutes-grid {
@@ -18,28 +20,33 @@
     gap: 30px;
   }
   
+  /* Institute Card */
   .institute-card {
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    animation: slideUp 0.5s ease;
   }
   
   .institute-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
   }
   
+  /* Card Image (should be applied using inline styles or background-image) */
   .card-image {
     height: 180px;
     background-size: cover;
     background-position: center;
+    border-bottom: 2px solid #f3dbad;
   }
   
+  /* Card Text */
   .card-text {
     background-color: #f3dbad;
     padding: 12px;
@@ -47,5 +54,40 @@
     color: #3e1e00;
     font-weight: 500;
     flex-grow: 1;
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+  
+    .card-text {
+      font-size: 14px;
+    }
+  }
+  
+  /* Animation Keyframes */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   
