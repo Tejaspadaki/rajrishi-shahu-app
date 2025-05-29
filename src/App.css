@@ -1,0 +1,10 @@
+/* App.css */
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-background {
+  background-image: url('images/background.png');
+}

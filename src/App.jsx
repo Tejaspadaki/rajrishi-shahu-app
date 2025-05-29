@@ -19,7 +19,6 @@ const About = ({ currentLang }) => (
   </div>
 );
 
-
 const News = () => (
   <div className="page">
     <h1>News & Events</h1>
@@ -36,19 +35,21 @@ function App() {
   const [currentLang, setCurrentLang] = useState('mr');
 
   return (
-    <Router>
-      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
-      <Routes>
-        <Route path="/" element={<Home currentLang={currentLang} />} />
-        <Route path="/about" element={<FoundingHistory  currentLang={currentLang} />} />
-        <Route path="/institutions" element={<Institutes currentLang={currentLang}/>} />
-        <Route path="/news" element={<News currentLang={currentLang}/>} />
-        <Route path="/gallery" element={<Gallery currentLang={currentLang} />} />
-        <Route path="/contact" element={<Contact currentLang={currentLang}  />} />
-        <Route path="/donate" element={<Donate currentLang={currentLang} />} />
-      </Routes>
-      <Footer currentLang={currentLang} />
-    </Router>
+    <div className="app-background">
+      <Router>
+        <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+        <Routes>
+          <Route path="/" element={<Home currentLang={currentLang} />} />
+          <Route path="/about" element={<FoundingHistory currentLang={currentLang} />} />
+          <Route path="/institutions" element={<Institutes currentLang={currentLang} />} />
+          <Route path="/news" element={<News currentLang={currentLang} />} />
+          <Route path="/gallery" element={<Gallery currentLang={currentLang} />} />
+          <Route path="/contact" element={<Contact currentLang={currentLang} />} />
+          <Route path="/donate" element={<Donate currentLang={currentLang} />} />
+        </Routes>
+        <Footer currentLang={currentLang} />
+      </Router>
+    </div>
   );
 }
 
