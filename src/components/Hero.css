@@ -119,13 +119,13 @@
 }
 .bottom-left.move {
   left: 10px;
-  bottom: 10px;
+  bottom: 0px;
   top: auto;
   transform: translate(0, 0);
 }
 .bottom-right.move {
   right: 10px;
-  bottom: 10px;
+  bottom: 0px;
   left: auto;
   top: auto;
   transform: translate(0, 0);
@@ -190,11 +190,11 @@
   }
   .bottom-left.move {
     left: 120px;
-    bottom: 170px;
+    bottom: 75px;
   }
   .bottom-right.move {
     right: 120px;
-    bottom: 170px;
+    bottom:75px;
   }
 }
 
