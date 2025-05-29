@@ -1,7 +1,7 @@
 /* Base mobile-first styles */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 81vh;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -39,19 +39,19 @@
 }
 
 .hero-headings h1 {
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   font-family: serif;
   margin-bottom: 0.3rem;
 }
 
 .hero-headings h2 {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-family: serif;
   margin-bottom: 0.2rem;
 }
 
 .hero-headings h3 {
-  font-size: 0.95rem;
+  font-size: 1.3rem;
   color: rgba(108, 64, 42, 0.8);
 }
 
@@ -76,8 +76,8 @@
 /* Corner Images */
 .corner-image {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 263px;
+  height: 258px;
   opacity: 0;
   transition: all 1s ease;
   z-index: 1;
@@ -99,109 +99,40 @@
   background-color: #103f49;
   color: white;
   padding: 0.4rem 0.7rem;
-  font-size: 0.8rem;
   border-radius: 6px;
-  width: 160px;
   text-align: center;
+  font-size: 1rem;
+  width: 263px;
 }
 
 /* Image move positions */
 .top-left.move {
-  left: 10px;
-  top: 10px;
+  left: 120px;
+  top: 0px;
   transform: translate(0, 0);
 }
 .top-right.move {
-  right: 10px;
-  top: 10px;
+  right: 120px;
+  top: 0px;
   left: auto;
   transform: translate(0, 0);
 }
 .bottom-left.move {
-  left: 10px;
-  bottom: 0px;
+  left: 120px;
+  bottom: 75px;
   top: auto;
   transform: translate(0, 0);
 }
 .bottom-right.move {
-  right: 10px;
-  bottom: 0px;
+  right: 120px;
+  bottom:75px;
   left: auto;
   top: auto;
   transform: translate(0, 0);
 }
 
-/* Tablet view */
-@media (min-width: 768px) {
-  .hero-headings h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-headings h2 {
-    font-size: 1.6rem;
-  }
-
-  .hero-headings h3 {
-    font-size: 1.2rem;
-  }
-
-  .corner-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  .corner-image .label {
-    font-size: 0.9rem;
-    width: 200px;
-  }
-}
-
-/* Desktop view */
-@media (min-width: 1024px) {
-  .hero-headings h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-headings h2 {
-    font-size: 1.8rem;
-  }
-
-  .hero-headings h3 {
-    font-size: 1.3rem;
-  }
-
-  .corner-image {
-    width: 263px;
-    height: 258px;
-  }
-
-  .corner-image .label {
-    font-size: 1rem;
-    width: 263px;
-  }
-
-  .top-left.move {
-    left: 120px;
-    top: 35px;
-  }
-  .top-right.move {
-    right: 120px;
-    top: 35px;
-  }
-  .bottom-left.move {
-    left: 120px;
-    bottom: 75px;
-  }
-  .bottom-right.move {
-    right: 120px;
-    bottom:75px;
-  }
-}
-
-
 .about-us-container {
   padding: 2rem;
-  /* background-color: #fdfdfd; */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -248,7 +179,9 @@
   margin: 1rem auto;
   border: none;
   height: 2px;
-  background-color: rgba(108, 64, 42, 0.8); /* 0.8 = 80% opacity */
+  background-color: rgba(108, 64, 42, 0.8);
   width: 60%;
   border-radius: 1px;
 }
+
+
