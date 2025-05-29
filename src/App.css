@@ -5,3 +5,6 @@ body {
   background-image: url(images/background.png);
   overflow-x: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}

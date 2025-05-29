@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import './App.css'; // Your global styles
+import AboutUs from './components/AboutUs'; // ✅ Import the About Us component
+import './App.css';
 
 // Sample page components
 const Home = ({ currentLang }) => <HeroSection currentLang={currentLang} />;
 
-const About = () => (
+const About = ({ currentLang }) => (
   <div className="page">
-    <h1>About Page</h1>
+    <AboutUs currentLang={currentLang} />
   </div>
 );
 
@@ -38,24 +39,14 @@ const Contact = () => (
 );
 
 function App() {
-  // State for current language: 'en' or 'mr'
   const [currentLang, setCurrentLang] = useState('mr');
-
-  // Handler to toggle language between English and Marathi
-  const switchLanguage = () => {
-    setCurrentLang((prevLang) => (prevLang === 'en' ? 'mr' : 'en'));
-  };
 
   return (
     <Router>
-      {/* Navbar receives currentLang and language toggle function */}
-        <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
-
-
-      {/* Define routes with currentLang passed where needed */}
+      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
       <Routes>
         <Route path="/" element={<Home currentLang={currentLang} />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About currentLang={currentLang} />} /> {/* ✅ Pass currentLang */}
         <Route path="/institutions" element={<Institutions />} />
         <Route path="/news" element={<News />} />
         <Route path="/gallery" element={<Gallery />} />

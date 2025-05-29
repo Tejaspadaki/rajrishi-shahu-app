@@ -1,8 +1,3 @@
-.navbar-container {
-  background-color: #184056;
-  width: 100%;
-  height: 30px;
-}
 
 .navbar {
   display: flex;
@@ -28,6 +23,7 @@
   color: rgba(108, 64, 42, 0.8);
   font-weight: 500;
   transition: color 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .nav-links li a:hover {
@@ -48,9 +44,9 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-/* #langButton:hover {
-  background-color: #502D18;
-} */
+#langButton:hover {
+  background-color: rgba(80, 45, 24, 0.1);
+}
 
 #langButton .btn-icon {
   width: 20px;

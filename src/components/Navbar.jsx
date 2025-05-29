@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaGlobe } from 'react-icons/fa';
 import './Navbar.css';
+import Land from "./pages/Land";
 
 const Navbar = ({ currentLang, setCurrentLang }) => {
   const navRef = useRef(null);
@@ -13,6 +13,7 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
   }, []);
 
   const switchLanguage = () => {
+    console.log('Language switched');
     setCurrentLang(currentLang === 'en' ? 'mr' : 'en');
   };
 
@@ -26,8 +27,9 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
   ];
 
   return (
-    <div className="navbar-container" ref={navRef} role="navigation" aria-label="Primary"> <br />
-      <nav className="navbar">
+    <>
+      <Land />
+      <nav className="navbar" ref={navRef}>
         <ul className="nav-links">
           {links.map(({ path, en, mr }, idx) => (
             <li key={idx}>
@@ -44,12 +46,11 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
             aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
             type="button"
           >
-            <FaGlobe style={{ marginRight: '8px' }} size={20} />
             {currentLang === 'en' ? 'मराठी' : 'English'}
           </button>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 
