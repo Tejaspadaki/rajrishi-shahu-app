@@ -81,9 +81,9 @@
 .hero-quote {
   font-size: 28px;
   font-weight: bold;
-  color: #8b0000;
+  color: #3F2B17;
   text-align: center;
-  white-space: nowrap;
+
 }
 
 .middle-section {
@@ -100,7 +100,7 @@
 
 .hero-title {
   font-size: 42px;
-  color: #4e2a1e;
+  color: #502D18;
   margin-bottom: 10px;
   font-weight: bold;
   position: relative;
@@ -109,10 +109,11 @@
 
 .hero-subtitle {
   font-size: 26px;
-  color: #6c3f2b;
+  color: rgba(108, 64, 42, 0.8);
   margin-bottom: 24px;
   position: relative;
-  left: 277px;
+  left: -99px;
+  text-align: end;
 }
 
 .profile-block-kakaji {
