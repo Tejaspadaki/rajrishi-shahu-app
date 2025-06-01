@@ -135,10 +135,9 @@
   font-size: 18px;
   line-height: 1.8;
   color: #4a4a4a;
-text-align: end;
-max-width: 80%;
-position: relative;
-left: 130px;
-bottom: -7px;
-
+  text-align: end;
+  max-width: 80%;
+  position: relative;
+  left: 130px;
+  bottom: -7px;
 }
