@@ -10,6 +10,8 @@
   justify-content: start;
   margin-bottom: 40px;
   gap: 67px;
+  position: relative;
+  top: -33px;
 }
 
 .profile-section {
@@ -28,8 +30,8 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  top: 10px;
-  left: -60px;
+  top: -220px;
+  left: 30px;
 }
 
 .profile-block-bhaiyaa{
@@ -37,16 +39,16 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  top: -271px;
-  right: 1241px;
+  top: -489px;
+  right: 1223px;
 }
 
 .profile-block img{
-  width: 200px;
-  height: 200px;
+  width: 251px;
+  height: auto;
   object-fit: cover;
   border-radius: 50%;
-  padding: 10px;
+  padding: 0px;
 }
 .profile-block-kakaji img {
   border-radius: 50%;
@@ -54,7 +56,7 @@
 }
 
 .profile-block-kakaji img {
-  width: 420px;
+  width: 524px;
   height: auto;
 }
 .profile-block-bhaiyaa img{
@@ -66,15 +68,15 @@
 }
 
 .profile-caption {
-  margin-top: -20px;
+  margin-top: -46px;
   background-color: #0d3b66;
   color: white;
-  padding: 10px 16px;
+  padding: 13px 20px;
   font-size: 14px;
   border-radius: 12px;
   font-weight: 500;
   text-align: center;
-  max-width: 220px;
+  max-width: 224px;
   line-height: 1.5;
 }
 
@@ -101,12 +103,13 @@
 }
 
 .hero-title {
-  font-size: 42px;
+  font-size: 53px;
   color: #502D18;
   margin-bottom: 10px;
   font-weight: bold;
   position: relative;
-  left: 277px;
+  left: 338px;
+  top: -70px;
 }
 
 .hero-subtitle {
@@ -114,8 +117,9 @@
   color: rgba(108, 64, 42, 0.8);
   margin-bottom: 24px;
   position: relative;
-  left: -99px;
+  left: 66px;
   text-align: end;
+  top: -78px;
 }
 
 .profile-block-kakaji {
@@ -134,23 +138,166 @@
 }
 
 .hero-description {
-  font-size: 18px;
   line-height: 1.8;
   color: #4a4a4a;
   text-align: end;
   max-width: 80%;
   position: relative;
-  left: 130px;
-  bottom: -7px;
+  left: 243px;
+  bottom: 127px;
 }
 
 
-/* Mobile Devices (up to 600px) */
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
+  .hero-title {
+    left: 100px;
+    font-size: 42px;
+  }
+
+  .hero-subtitle {
+    left: 20px;
+    font-size: 22px;
+  }
+
+  .hero-description {
+    left: 100px;
+    font-size: 15px;
+    max-width: 90%;
+  }
+
+  .profile-block-kakaji img {
+    width: 400px;
+  }
+
+  .profile-block-bhaiyaa {
+    right: 700px;
+    top: -450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    top: 0;
+  }
+
+  .middle-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    left: 0;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    left: 0;
+    top: -40px;
+    text-align: center;
+  }
+
+  .hero-description {
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .profile-block-kakaji {
+    top: 0;
+    left: 0;
+  }
+
+  .profile-block-bhaiyaa {
+    top: 0;
+    right: 0;
+    position: static;
+  }
+
+  .profile-block-kakaji img {
+    width: 300px;
+  }
+
+  .profile-block-bhaiyaa img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-quote {
+    font-size: 30px;
+    right: 0;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .profile-block img,
+  .profile-block-kakaji img,
+  .profile-block-bhaiyaa img {
+    width: 180px;
+  }
+
+  .profile-caption {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .profile-block img,
+  .profile-block-kakaji img,
+  .profile-block-bhaiyaa img {
+    width: 150px;
+  }
+
+  .profile-caption {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
   .top-section,
-  .profile-section,
-  .middle-section,
-  .bottom-section {
+  .middle-section {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage {
+    padding: 10px;
+  }
+
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: static;
+    top: 0;
+    margin-bottom: 20px;
+  }
+
+  .profile-section {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -160,77 +307,228 @@
   .profile-block-kakaji,
   .profile-block-bhaiyaa {
     position: static;
-    margin: 10px 0;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .profile-block img,
+  .profile-block-kakaji img,
   .profile-block-bhaiyaa img {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
   }
 
-  .profile-block-kakaji img {
-    width: 280px;
-  }
-
-  .hero-title,
-  .hero-subtitle,
-  .hero-description {
-    text-align: center;
-    left: 0 !important;
-    max-width: 90%;
-    position: static;
-  }
-
-  .content-left {
+  .profile-caption {
+    margin-top: 10px;
+    font-size: 13px;
+    padding: 8px 14px;
     max-width: 90%;
   }
 
   .hero-quote {
     font-size: 22px;
+    position: static;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .middle-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .content-left {
+    max-width: 100%;
     text-align: center;
   }
 
-  .profile-caption {
-    font-size: 13px;
+  .hero-title {
+    font-size: 30px;
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    position: static;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    position: static;
     max-width: 90%;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 auto;
+  }
+
+  .bottom-section {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 }
 
-/* Tablet Devices (601px to 992px) */
-@media (min-width: 601px) and (max-width: 992px) {
-  .top-section,
-  .middle-section,
-  .bottom-section {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .profile-block-kakaji {
-    left: 0;
-  }
+  /* General Container */
+.about-us-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .profile-block-bhaiyaa {
-    top: 0;
-    right: 0;
-  }
+/* Section Layout */
+.section {
+  text-align: center;
+  animation: fadeInUp 0.6s ease;
+}
 
-  .hero-title,
-  .hero-subtitle,
-  .hero-description {
-    left: 0;
-    max-width: 90%;
-    text-align: center;
-    position: static;
-  }
+.section-title {
+  font-size: 2.2rem;
+  margin: 1rem 0 0.5rem;
+  color: #184056;
+  font-weight: 600;
+}
 
-  .profile-block-kakaji img {
-    width: 320px;
-  }
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 1rem auto;
+  max-width: 850px;
+  padding: 0 1rem;
+}
 
-  .profile-block img,
-  .profile-block-bhaiyaa img {
-    width: 180px;
-    height: 180px;
-  }
+.section-image {
+  max-width: 90%;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+}
+
+.section-image.top {
+  margin-bottom: 1rem;
+}
+
+.section-image.bottom {
+  margin-top: 1.5rem;
+}
+
+.section-separator {
+  margin: 1rem auto;
+  border: none;
+  height: 2px;
+  background-color: rgba(108, 64, 42, 0.8);
+  width: 60%;
+  border-radius: 1px;
+}
+
+/* Contact Page */
+.contact-page {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  font-family: 'Georgia', serif;
+  padding: 2rem;
+  color: #573c27;
+  background-size: cover;
+  background-position: center;
+  gap: 2rem;
+  animation: slideInLeft 0.5s ease;
+}
+
+/* Left Contact Section */
+.contact-left {
+  flex: 1;
+  border-right: 2px solid #573c27;
+  padding-right: 2rem;
+}
+
+.contact-left h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.info-text {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: none;
+  border-bottom: 2px solid #c4a989;
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 150px;
+  padding: 0.6rem;
+  background-color: #16333e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Right Contact Section */
+.contact-right {
+  flex: 1;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-right h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.contact-details p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+
+.map-box {
+  background-color: white;
+  border-radius: 12px;
+  height: 120px;
+  width: 100%;
+  margin-top: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.donate-btn {
+  padding: 0.6rem 2rem;
+  border: 2px solid #573c27;
+  background-color: #fce3c1;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #573c27;
+  cursor: pointer;
+  align-self: center;
 }
