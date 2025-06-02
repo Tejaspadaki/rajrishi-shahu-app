@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import FoundingHistory from './components/FoundingHistory';
@@ -10,50 +15,54 @@ import Donate from './components/Donate';
 import Institutes from './components/Institutes';
 import bgImage from '/images/background.png';
 
-// Sample page components
+// Route components
 const Home = ({ currentLang }) => <HeroSection currentLang={currentLang} />;
-
-const appBackgroundStyle = {
-  backgroundImage: `url(${bgImage})`,
-};
-
-const About = ({ currentLang }) => (
-  <div className="page">
-    <AboutUs currentLang={currentLang} />
-  </div>
-);
-
 const News = () => (
   <div className="page">
     <h1>News & Events</h1>
   </div>
 );
-
 const Gallery = () => (
   <div className="page">
     <h1>Gallery</h1>
   </div>
 );
 
+// Component to wrap routes and check for background/footer conditions
+const AppContent = ({ currentLang }) => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const appBackgroundStyle = {
+    backgroundImage: `url(${bgImage})`,
+  };
+
+  return (
+    <div className={!isHome ? 'app-background' : ''} style={!isHome ? appBackgroundStyle : {}}>
+      <Navbar currentLang={currentLang} setCurrentLang={() => {}} />
+
+      <Routes>
+        <Route path="/" element={<Home currentLang={currentLang} />} />
+        <Route path="/about" element={<FoundingHistory currentLang={currentLang} />} />
+        <Route path="/institutions" element={<Institutes currentLang={currentLang} />} />
+        <Route path="/news" element={<News currentLang={currentLang} />} />
+        <Route path="/gallery" element={<Gallery currentLang={currentLang} />} />
+        <Route path="/contact" element={<Contact currentLang={currentLang} />} />
+        <Route path="/donate" element={<Donate currentLang={currentLang} />} />
+      </Routes>
+
+      {!isHome && <Footer currentLang={currentLang} />}
+    </div>
+  );
+};
+
 function App() {
   const [currentLang, setCurrentLang] = useState('mr');
 
   return (
-    <div className="app-background" style={appBackgroundStyle}>
-      <Router>
-        <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
-        <Routes>
-          <Route path="/" element={<Home currentLang={currentLang} />} />
-          <Route path="/about" element={<FoundingHistory currentLang={currentLang} />} />
-          <Route path="/institutions" element={<Institutes currentLang={currentLang} />} />
-          <Route path="/news" element={<News currentLang={currentLang} />} />
-          <Route path="/gallery" element={<Gallery currentLang={currentLang} />} />
-          <Route path="/contact" element={<Contact currentLang={currentLang} />} />
-          <Route path="/donate" element={<Donate currentLang={currentLang} />} />
-        </Routes>
-        {/* <Footer currentLang={currentLang} /> */}
-      </Router>
-      </div>
+    <Router>
+      <AppContent currentLang={currentLang} setCurrentLang={setCurrentLang} />
+    </Router>
   );
 }
 

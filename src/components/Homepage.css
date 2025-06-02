@@ -742,3 +742,8 @@
   font-size: 0.85rem;
   color: #3b2f2f;
 }
+
+.app-background-1 {
+  background-image: url('images/background.png');
+  height: 457vh;
+}

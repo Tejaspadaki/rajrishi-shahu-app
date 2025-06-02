@@ -108,7 +108,8 @@ export default function HeroSection({ currentLang }) {
   const t = footerText[currentLang] || footerText.en;
 
   return (
-    <>
+    <><section>
+    <div className="app-background-1">
       <section>
         <div className="homepage">
           <div className="top-section">
@@ -286,6 +287,8 @@ export default function HeroSection({ currentLang }) {
 </div>
 
     </footer>
+      </section>
+      </div>
       </section>
     </>
   );
