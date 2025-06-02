@@ -379,6 +379,8 @@
 .about-us-container {
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  top: -529px;
 }
 
 /* Section Layout */
@@ -428,6 +430,10 @@
 }
 
 /* Contact Page */
+.contact-page-1{
+  position: relative;
+  bottom: 780px;
+}
 .contact-page {
   display: flex;
   flex-direction: row;
@@ -531,4 +537,208 @@
   color: #573c27;
   cursor: pointer;
   align-self: center;
+}
+
+.aadarsh-container{
+  position: relative;
+  bottom: 574px;
+  }
+.aai-page {
+  min-height: 100vh;
+  /* background-color: #f5e4ca; */
+  /* background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); */
+  font-family: 'Playfair Display', serif;
+  color: #2d1a05;
+  padding: 2rem;
+  text-align: center;
+}
+
+.aai-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.aai-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.aai-card {
+  width: 160px;
+  height: 220px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.aai-description {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+.adoption-section {
+  /* background-color: #fbe7c0; light peachy background */
+  padding: 2rem 4rem;
+  font-family: 'Georgia', serif;
+  position: relative;
+  bottom: 768px;
+}
+
+.adoption-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10rem;
+  max-width: 1300px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.adoption-image {
+  flex: 1;
+  min-width: 300px;
+  min-height: 711px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.adoption-content {
+  flex: 1;
+  min-width: 300px;
+  color: #000;
+}
+
+.adoption-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.adoption-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2d2d2d;
+}
+
+
+/* Footer Base */
+.footer-1{
+  position: relative;
+  bottom: 815px;
+}
+.footer {
+  background-color: #f2d4a2;
+  color: #573c27;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Container */
+.footer-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Responsive Row Layout */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* Left Section */
+.footer-left h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.footer-left p {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 1.2rem;
+}
+
+.social-icons p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.icon-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.icon {
+  background-color: #16333e;
+  padding: 0.45rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icon:hover {
+  background-color: #1e4c5a;
+}
+
+/* Right Section */
+.footer-right {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .footer-right {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.footer-right p {
+  margin-top: 0.3rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-right p:hover {
+  color: #3b2f2f;
+  text-decoration: underline;
+}
+
+/* Bottom Line */
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #3b2f2f;
 }

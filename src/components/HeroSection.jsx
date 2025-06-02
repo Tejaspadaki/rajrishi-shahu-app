@@ -1,8 +1,10 @@
 import React from 'react';
 import './Homepage.css';
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+
 
 export default function HeroSection({ currentLang }) {
-  const text = {
+  const heroText = {
     en: {
       quote: '|| Be Successful, Be Victorious ||',
       title: (
@@ -15,7 +17,7 @@ export default function HeroSection({ currentLang }) {
       inspiration: 'Inspiration: Chhatrapati Rajarshi Shahu Maharaj',
       tribute: 'Heartfelt Tribute: Late. Smt. Malushi Vitthalrao Patil (Didi)',
       president: 'Mr. Vitthalrao Bhausaheb Patil (Kakaji)\nPresident',
-      secretary: 'Mr. Gaganraj Vitthalrao Patil (Maddy)\nSecretary'
+      secretary: 'Mr. Gaganraj Vitthalrao Patil (Maddy)\nSecretary',
     },
     mr: {
       quote: '|| यशवंत हो, जयवंत हो ||',
@@ -25,8 +27,41 @@ export default function HeroSection({ currentLang }) {
       inspiration: 'प्रेरणास्थान :\nछत्रपती राजर्षी शाहू महाराज',
       tribute: 'भावपूर्ण श्रद्धांजली\nवै. सौ. मालुषी विठ्ठलराव पाटील (दीदी)',
       president: 'श्री. विठ्ठलराव भाऊसाहेब पाटील (काकाजी)\nअध्यक्ष',
-      secretary: 'श्री. गगनराज विठ्ठलराव पाटील (मॅड्या)\nसचिव.'
-    }
+      secretary: 'श्री. गगनराज विठ्ठलराव पाटील (मॅड्या)\nसचिव.',
+    },
+  };
+
+  const footerText = {
+    en: {
+      title: 'Rajarshi Shahu Shikshan Sanstha',
+      location: 'Inam Dhamani, Sangli',
+      follow: 'Follow us on:',
+      links: {
+        home: 'Home',
+        about: 'About Us',
+        institutions: 'Institutions',
+        news: 'News & Events',
+        gallery: 'Gallery',
+        contact: 'Contact Us',
+        donate: 'Donate',
+        trust: 'Trust Info',
+      },
+    },
+    mr: {
+      title: 'राजर्षी शाहू शिक्षण संस्था',
+      location: 'इनाम धामणी, सांगली',
+      follow: 'आम्हाला फॉलो करा:',
+      links: {
+        home: 'मुख्यपृष्ठ',
+        about: 'आमच्याबद्दल',
+        institutions: 'संस्थाने',
+        news: 'बातम्या आणि कार्यक्रम',
+        gallery: 'गॅलरी',
+        contact: 'संपर्क करा',
+        donate: 'दान करा',
+        trust: 'विश्वास',
+      },
+    },
   };
 
   const contactText = {
@@ -53,23 +88,24 @@ export default function HeroSection({ currentLang }) {
       stayConnected: 'संपर्कात रहा: आमच्याशी संपर्क करा',
       contactDetails: ['१२३४५६७८९०', '९८७६५४३२१०'],
       donateBtn: 'दान करा',
-    }
+    },
   };
 
   const aadarshText = {
     en: {
-      heading: 'Aadarsh Aai',
-      description: `Lorem ipsum dolor sit amet consectetur. Aenean in aliquet pulvinar urna nisi.`,
+      title: 'Aadarsh Aai',
+      description: `Lorem ipsum dolor sit amet consectetur. Risus ut scelerisque est imperdiet ornare sed quam vel. Sit viverra id at ornare vel fermentum donec. Mattis tellus nec pulvinar dictumst semper nunc mattis. Nibh rhoncus tincidunt duis tincidunt ultrices.`,
     },
     mr: {
-      heading: 'आदर्श आई',
-      description: `लोरम इप्सम डोलर सिट अमेट कॉन्सेक्टेचर.`,
-    }
+      title: 'आदर्श आई',
+      description: `लोरेम इप्सम डोलर सिट अमेट कॉन्सेक्टेचर. risus ut scelerisque est imperdiet ornare sed quam vel. ornare vel fermentum donec. mattis tellus nec pulvinar dictumst semper nunc mattis. nibh rhoncus tincidunt duis tincidunt ultrices.`,
+    },
   };
 
-  const contentT = text[currentLang] || text.en;
+  const contentT = heroText[currentLang] || heroText.en;
   const contactT = contactText[currentLang] || contactText.en;
   const a = aadarshText[currentLang] || aadarshText.en;
+  const t = footerText[currentLang] || footerText.en;
 
   return (
     <>
@@ -115,69 +151,64 @@ export default function HeroSection({ currentLang }) {
       <section className="about-us-container">
         {/* OUR VISION */}
         <div className="section">
-          <img
-            src="/images/6.png"
-            alt="Our Vision Top"
-            className="section-image top"
-          />
+          <img src="/images/6.png" alt="Our Vision Top" className="section-image top" />
           <h2 className="section-title">
             {currentLang === 'en' ? 'Our Vision' : 'आपली दृष्टीकोन'}
           </h2>
           <p className="section-text">
             {currentLang === 'en'
               ? "The vision of Rajarshi Shahu Shikshan Sanstha, Inam Dhamani, Sangli is to provide modern, ethical, and quality education to students from rural, poor, underprivileged, and economically weaker sections of society. The institution's objective is to bring about social transformation through education and to nurture students into empowered, cultured, and self-reliant citizens. The core principles of this vision include rural education, a drug-free society, value-based education, and holistic development. Believing that education is the only effective path to social progress, the institution continuously implements quality-driven and student-centric initiatives."
-              : 'राजर्षी शाहू शिक्षण संस्था, इनाम धामणी, सांगली या संस्थेचा दृष्टिकोन म्हणजे ग्रामीण, गरीब, दलित आणि आर्थिकदृष्ट्या दुर्बल वर्गातील विद्यार्थ्यांना आधुनिक, नैतिक व गुणवत्तापूर्ण शिक्षण देणे. संस्थेचे उद्दिष्ट म्हणजे शिक्षणाच्या माध्यमातून समाज परिवर्तन घडवणे आणि विद्यार्थ्यांना सशक्त, सुसंस्कृत आणि स्वावलंबी नागरिक म्हणून घडवणे. ग्रामीण शिक्षण, व्यसनमुक्त समाज, नैतिक मूल्यांचे शिक्षण आणि सर्वांगीण विकास ही या दृष्टिकोनाची मुख्य तत्त्वे आहेत. शिक्षण हा समाज उन्नतीचा एकमेव प्रभावी मार्ग आहे, ही संकल्पना बाळगून संस्था सतत गुणवत्तापूर्ण आणि विद्यार्थीकेंद्रित उपक्रम राबवत आहे..'}
+              : 'राजर्षी शाहू शिक्षण संस्था, इनाम धामणी, सांगली या संस्थेचा दृष्टिकोन म्हणजे ग्रामीण, गरीब, दलित आणि आर्थिकदृष्ट्या दुर्बल वर्गातील विद्यार्थ्यांना आधुनिक, नैतिक व गुणवत्तापूर्ण शिक्षण देणे...'}
           </p>
-          <img
-            src="/images/5.png"
-            alt="Our Vision Bottom"
-            className="section-image bottom"
-          />
+          <img src="/images/5.png" alt="Our Vision Bottom" className="section-image bottom" />
         </div>
         <hr className="section-separator" />
 
         {/* OUR MISSION */}
         <div className="section">
-          <img
-            src="/images/6.png"
-            alt="Our Mission Top"
-            className="section-image top"
-          />
+          <img src="/images/6.png" alt="Our Mission Top" className="section-image top" />
           <h2 className="section-title">
             {currentLang === 'en' ? 'Our Mission' : 'आपले ध्येय'}
           </h2>
           <p className="section-text">
             {currentLang === 'en'
-              ? "The mission of Rajarshi Shahu Shikshan Sanstha is to bring underprivileged, poor, children of farmers affected by suicides, and economically distressed students from rural areas into the mainstream of education, and to help them become self-respecting and self-reliant individuals. Through polytechnic education, industrial training, physical education, ethics, and the teachings of the Warkari tradition, the institution imparts not only academic knowledge but also instills core life values. The goal of the institution is to inspire students towards a drug-free life, fostering positive thinking and a socially beneficial outlook. This education is not merely about gaining knowledge, but is focused on holistic personality development."
-              : 'राजर्षी शाहू शिक्षण संस्थेचे मिशन म्हणजे ग्रामीण भागातील गरजू, गरीब, आत्महत्याग्रस्त शेतकऱ्यांची मुले आणि आर्थिकदृष्ट्या अडचणीत असलेल्या मुलांना शिक्षणाच्या प्रवाहात आणून त्यांना स्वाभिमानी व स्वावलंबी बनवणे. संस्था तंत्रनिकेतन, औद्योगिक प्रशिक्षण, शारीरिक व्यायाम, नैतिकता आणि वारकरी संप्रदायाच्या शिक्षणाच्या माध्यमातून विद्यार्थ्यांना केवळ शिक्षणच नव्हे तर जीवनातील मूल्यांचे बाळकडू देते. विद्यार्थ्यांमध्ये व्यसनमुक्तीची प्रेरणा निर्माण करून त्यांना सकारात्मक विचारसरणी आणि समाज उपयोगी दृष्टिकोन देणे हे संस्थेचे ध्येय आहे. हे शिक्षण केवळ ज्ञान देणारे नसून व्यक्तिमत्व विकासावर आधारित आहे'}
+              ? "The mission of Rajarshi Shahu Shikshan Sanstha is to bring underprivileged, poor, children of farmers affected by suicides, and economically distressed students from rural areas into the mainstream of education..."
+              : 'राजर्षी शाहू शिक्षण संस्थेचे मिशन म्हणजे ग्रामीण भागातील गरजू, गरीब, आत्महत्याग्रस्त शेतकऱ्यांची मुले...'}
           </p>
-          <img
-            src="/images/5.png"
-            alt="Our Mission Bottom"
-            className="section-image bottom"
-          />
+          <img src="/images/5.png" alt="Our Mission Bottom" className="section-image bottom" />
         </div>
       </section>
 
       <section className="aadarsh-container">
-        <div className="aadarsh-content">
-          <div className="left">
-            <div className="image-placeholder"></div>
-            <h2>{a.heading}</h2>
-            <p>{a.description}</p>
+        <div className="aai-page">
+          <h1 className="aai-title">{a.title}</h1>
+
+          <div className="aai-cards">
+            {[1, 2, 3, 4].map((item) => (
+              <div key={item} className="aai-card"></div>
+            ))}
           </div>
-          <div className="right">
-            <div className="vertical-line">
-              <div className="horizontal-line top"></div>
-              <div className="horizontal-line upper-middle"></div>
-              <div className="horizontal-line lower-middle"></div>
-              <div className="horizontal-line bottom"></div>
-            </div>
-          </div>
+
+          <p className="aai-description">{a.description}</p>
         </div>
       </section>
 
-      <section>
+
+      <section className="adoption-section">
+      <div className="adoption-container">
+        <div className="adoption-image" />
+        <div className="adoption-content">
+          <h1 className="adoption-title">Adoption of<br />Childrens</h1>
+          <p className="adoption-description">
+            Lorem ipsum dolor sit amet consectetur. Risus ut scelerisque est imperdiet ornare sed quam vel.
+            Sit viverra id at ornare vel fermentum donec. Mattis tellus nec pulvinar dictumst semper nunc mattis.
+            Nibh rhoncus tincidunt duis tincidunt ultrices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+      <section className="contact-page-1">
         <div className="contact-page">
           {/* Left Section */}
           <div className="contact-left">
@@ -206,6 +237,55 @@ export default function HeroSection({ currentLang }) {
             </a>
           </div>
         </div>
+      </section>
+
+      <section className='footer-1'>
+      <footer className="footer">
+      <div className="footer-container">
+        {/* Left Section */}
+        <div className="footer-left">
+          <h1>{t.title}</h1>
+          <p>{t.location}</p>
+
+          {/* Social Media Icons */}
+          <div className="social-icons">
+            <p>{t.follow}</p>
+            <div className="icon-group">
+              <div className="icon"><FaInstagram /></div>
+              <div className="icon"><FaFacebookF /></div>
+              <div className="icon"><FaLinkedinIn /></div>
+              <div className="icon"><FaXTwitter /></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Sections */}
+        <div className="footer-right">
+          <div>
+            <p>{t.links.home}</p>
+            <p>{t.links.about}</p>
+            <p>{t.links.institutions}</p>
+          </div>
+          <div>
+            <p>{t.links.news}</p>
+            <p>{t.links.gallery}</p>
+            <p>{t.links.contact}</p>
+          </div>
+          <div>
+            <p>{t.links.trust}</p>
+            <p>{t.links.donate}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom */}
+      <div className="footer-bottom">
+  {currentLang === 'mr'
+    ? '© 2025 राजर्षी शाहू शिक्षण संस्था. सर्व हक्क राखीव.'
+    : '© 2025 Rajarshi Shahu Shikshan Sanstha. All rights reserved.'}
+</div>
+
+    </footer>
       </section>
     </>
   );

@@ -51,7 +51,7 @@ function App() {
           <Route path="/contact" element={<Contact currentLang={currentLang} />} />
           <Route path="/donate" element={<Donate currentLang={currentLang} />} />
         </Routes>
-        <Footer currentLang={currentLang} />
+        {/* <Footer currentLang={currentLang} /> */}
       </Router>
       </div>
   );

@@ -7,4 +7,5 @@ body, html, #root {
 
 .app-background {
   background-image: url('images/background.png');
+  height: 457vh;
 }
