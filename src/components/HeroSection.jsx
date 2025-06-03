@@ -6,7 +6,7 @@ import { FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter } from 'react-icons/
 export default function HeroSection({ currentLang }) {
   const heroText = {
     en: {
-      quote: '|| Be Successful, Be Victorious ||',
+      quote: <>Be Successful,<br /> Be Victorious</>,
       title: (
         <>
           Rajarshi Shahu <br /> Shikshan Sanstha,

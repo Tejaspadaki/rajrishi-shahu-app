@@ -29,7 +29,7 @@ const Gallery = () => (
 );
 
 // Component to wrap routes and check for background/footer conditions
-const AppContent = ({ currentLang }) => {
+const AppContent = ({ currentLang, setCurrentLang }) => {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
@@ -39,7 +39,8 @@ const AppContent = ({ currentLang }) => {
 
   return (
     <div className={!isHome ? 'app-background' : ''} style={!isHome ? appBackgroundStyle : {}}>
-      <Navbar currentLang={currentLang} setCurrentLang={() => {}} />
+      {/* ✅ Correctly pass setCurrentLang */}
+      <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} />
 
       <Routes>
         <Route path="/" element={<Home currentLang={currentLang} />} />

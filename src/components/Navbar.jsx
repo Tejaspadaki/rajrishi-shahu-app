@@ -34,38 +34,42 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
   return (
     <>
       <Land />
-      <nav className="navbar" ref={navRef}>
-        <button
-          className={`hamburger ${menuOpen ? 'open' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
-        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          {links.map(({ path, en, mr }, idx) => (
-            <li key={idx} onClick={() => setMenuOpen(false)}>
-              <Link to={path} tabIndex={0}>
-                {currentLang === 'en' ? en : mr}
-              </Link>
-            </li>
-          ))}
-          <li>
+      <section>
+        <div className="app-background">
+          <nav className="navbar" ref={navRef}>
             <button
-              id="langButton"
-              onClick={switchLanguage}
-              aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
-              type="button"
+              className={`hamburger ${menuOpen ? 'open' : ''}`}
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
             >
-              {currentLang === 'en' ? 'मराठी' : 'English'}
+              <span />
+              <span />
+              <span />
             </button>
-          </li>
-        </ul>
-      </nav>
+
+            <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+              {links.map(({ path, en, mr }, idx) => (
+                <li key={idx} onClick={() => setMenuOpen(false)}>
+                  <Link to={path} tabIndex={0}>
+                    {currentLang === 'en' ? en : mr}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <button
+                  id="langButton"
+                  onClick={switchLanguage}
+                  aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
+                  type="button"
+                >
+                  {currentLang === 'en' ? 'मराठी' : 'English'}
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
     </>
   );
 };
