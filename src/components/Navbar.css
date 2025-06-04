@@ -1,59 +1,66 @@
-/* Base Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 0.5rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1000;
-  background: transparent;
+  padding: 1rem 2rem;
+  font-family: 'Georgia', serif;
 }
 
-/* Nav Links */
-.nav-links {
-  list-style: none;
+.nav-left {
   display: flex;
-  gap: 5rem;
-  padding-left: 0;
-  margin: 0;
+  align-items: center;
+  gap: 2rem;
 }
 
-.nav-links li {
+.nav-links {
+  display: flex;
+  gap: 8rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
   text-decoration: none;
-  color: rgba(108, 64, 42, 0.8);
+  color: #6c402a;
   font-weight: 500;
+  font-size: 1rem;
   transition: color 0.2s ease-in-out;
-  cursor: pointer;
 }
 
 .nav-links li a:hover {
-  color: white;
+  color: #000;
 }
 
-/* Language Button */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
 #langButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   border: 2px solid #502D18;
-  border-radius: 5px;
+  border-radius: 10px;
+  background: #f5e3c0;
+  color: #502D18;
+  padding: 0.4rem 0.9rem;
   cursor: pointer;
-  padding: 0.3rem 0.7rem;
-  background: transparent;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: rgba(108, 64, 42, 0.8);
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 #langButton:hover {
-  background-color: rgba(80, 45, 24, 0.1);
+  background: #f0d9b4;
 }
 
-/* Hamburger Button */
+.lang-icon {
+  font-size: 1.2rem;
+}
+
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -63,18 +70,15 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
-  box-sizing: border-box;
-  z-index: 1100;
+  margin-right: 1rem;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: rgba(108, 64, 42, 0.8);
+  background: #6c402a;
   border-radius: 3px;
   transition: all 0.3s ease;
-  position: relative;
   transform-origin: 1px;
 }
 
@@ -91,20 +95,7 @@
   transform: rotate(-45deg);
 }
 
-/* ========== Media Queries ========== */
-
-/* Medium screens (max-width: 1080px) */
-@media (max-width: 1080px) {
-  .nav-links {
-    gap: 3rem;
-  }
-
-  #langButton {
-    padding: 0.3rem 0.6rem;
-  }
-}
-
-/* Tablets and smaller (max-width: 768px) */
+/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -113,39 +104,36 @@
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: white;
     position: absolute;
     top: 60px;
-    right: 0;
+    left: 0;
     width: 100%;
-    padding: 1rem 0;
+    background-color: #f5e3c0;
     text-align: center;
-    gap: 2rem;
+    padding: 1rem 0;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.active {
     display: flex;
   }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-right {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
 }
 
-/* Small phones (max-width: 480px) */
-@media (max-width: 480px) {
-  .nav-links {
-    gap: 1.5rem;
-  }
 
-  #langButton {
-    font-size: 0.9rem;
-  }
-
-  .hamburger {
-    width: 22px;
-    height: 20px;
-  }
-
-  .hamburger span {
-    width: 22px;
-    height: 2.5px;
-  }
+.lang-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }

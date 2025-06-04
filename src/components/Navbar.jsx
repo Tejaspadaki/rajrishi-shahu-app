@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Land from './pages/Land';
+import { FaGlobe } from 'react-icons/fa';
 
 const Navbar = ({ currentLang, setCurrentLang }) => {
   const navRef = useRef(null);
@@ -15,7 +16,7 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
 
   const switchLanguage = () => {
     setCurrentLang(currentLang === 'en' ? 'mr' : 'en');
-    setMenuOpen(false); // close menu when switching language
+    setMenuOpen(false);
   };
 
   const toggleMenu = () => {
@@ -37,36 +38,41 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
       <section>
         <div className="app-background">
           <nav className="navbar" ref={navRef}>
-            <button
-              className={`hamburger ${menuOpen ? 'open' : ''}`}
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-              aria-expanded={menuOpen}
-            >
-              <span />
-              <span />
-              <span />
-            </button>
+            <div className="nav-left">
+              <button
+                className={`hamburger ${menuOpen ? 'open' : ''}`}
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+                aria-expanded={menuOpen}
+              >
+                <span />
+                <span />
+                <span />
+              </button>
 
-            <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-              {links.map(({ path, en, mr }, idx) => (
-                <li key={idx} onClick={() => setMenuOpen(false)}>
-                  <Link to={path} tabIndex={0}>
-                    {currentLang === 'en' ? en : mr}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <button
-                  id="langButton"
-                  onClick={switchLanguage}
-                  aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
-                  type="button"
-                >
-                  {currentLang === 'en' ? 'मराठी' : 'English'}
-                </button>
-              </li>
-            </ul>
+              <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+                {links.map(({ path, en, mr }, idx) => (
+                  <li key={idx} onClick={() => setMenuOpen(false)}>
+                    <Link to={path}>
+                      {currentLang === 'en' ? en : mr}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="nav-right">
+              <button
+                id="langButton"
+                onClick={switchLanguage}
+                type="button"
+                aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
+              >
+                <img src="/images/Translation.png" alt="Translation" className="lang-img" />
+                <span>{currentLang === 'en' ? 'English' : 'मराठी'}</span>
+              </button>
+            </div>
+
           </nav>
         </div>
       </section>
