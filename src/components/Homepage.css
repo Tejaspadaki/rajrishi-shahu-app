@@ -545,8 +545,6 @@
   }
 .aai-page {
   min-height: 100vh;
-  /* background-color: #f5e4ca; */
-  /* background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); */
   font-family: 'Playfair Display', serif;
   color: #2d1a05;
   padding: 2rem;
@@ -745,5 +743,6 @@
 
 .app-background-1 {
   background-image: url('images/background.png');
-  height: 100%;
+  height: 485vh;
+
 }
