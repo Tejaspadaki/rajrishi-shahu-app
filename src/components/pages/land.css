@@ -4,3 +4,9 @@
     height: 40px;
   }
   
+
+  @media (max-width: 480px) {
+    .navbar-container {
+    width: 469px;
+    }
+  }

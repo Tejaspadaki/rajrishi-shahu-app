@@ -6,5 +6,11 @@ body, html, #root {
 }
 
 .app-background {
-  background-image: url('images/background.png');
+  background-image: url('/images/background.png');
+}
+
+@media (max-width: 480px) {
+  .app-background {
+  width: 469px;
+  }
 }
