@@ -429,6 +429,79 @@
   border-radius: 1px;
 }
 
+
+/* For screens <= 1080px (small desktops/laptops) */
+@media (max-width: 1080px) {
+  .about-us-container {
+    top: -53px;
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-text {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .section-separator {
+    width: 70%;
+  }
+}
+
+/* For screens <= 768px (tablets) */
+@media (max-width: 768px) {
+  .about-us-container {
+    top: -42px;
+    padding: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .section-image {
+    max-width: 95%;
+  }
+
+  .section-separator {
+    width: 80%;
+  }
+}
+
+/* For screens <= 480px (mobile phones) */
+@media (max-width: 480px) {
+  .about-us-container {
+    top: -8px;
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-text {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .section-image {
+    max-width: 100%;
+  }
+
+  .section-separator {
+    width: 90%;
+  }
+}
+
+
 /* Contact Page */
 .contact-page-1{
   position: relative;
@@ -539,6 +612,142 @@
   align-self: center;
 }
 
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1024px) {
+  .contact-page-1 {
+    bottom: 600px; /* Adjust vertical position */
+  }
+
+  .contact-page {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding: 1rem;
+  }
+
+  .contact-left h1 {
+    font-size: 2rem;
+  }
+
+  .info-text,
+  .contact-details p {
+    font-size: 1.1rem;
+  }
+
+  .submit-btn {
+    width: 130px;
+    font-size: 0.95rem;
+  }
+
+  .map-box {
+    height: 100px;
+  }
+
+  .donate-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+/* Small devices (tablets and small screens, below 768px) */
+@media (max-width: 768px) {
+  .contact-page-1 {
+    bottom: 400px;
+  }
+
+  .contact-page {
+    flex-direction: column;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .contact-left {
+    border-right: none;
+    border-bottom: 2px solid #573c27;
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
+
+  .contact-right {
+    padding-left: 0;
+    gap: 1rem;
+  }
+
+  .contact-left h1 {
+    font-size: 2rem;
+  }
+
+  .info-text,
+  .contact-details p {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .map-box {
+    height: 150px;
+  }
+
+  .donate-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.95rem;
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* Extra small devices (mobile phones, below 480px) */
+@media (max-width: 480px) {
+  .contact-page-1 {
+    bottom: 184px;
+  }
+
+  .contact-page {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  .contact-left h1 {
+    font-size: 1.75rem;
+  }
+
+  .info-text,
+  .contact-details p {
+    font-size: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .map-box {
+    height: 120px;
+  }
+
+  .donate-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
 .aadarsh-container{
   position: relative;
   bottom: 574px;
@@ -578,6 +787,93 @@
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1024px) {
+  .aadarsh-container {
+    bottom: 450px; /* adjust vertical positioning */
+  }
+
+  .aai-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .aai-cards {
+    gap: 1.5rem;
+  }
+
+  .aai-card {
+    width: 140px;
+    height: 190px;
+  }
+
+  .aai-description {
+    max-width: 600px;
+    font-size: 1rem;
+  }
+}
+
+/* Small devices (tablets and small screens, below 768px) */
+@media (max-width: 768px) {
+  .aadarsh-container {
+    bottom: 320px;
+    padding: 1rem;
+  }
+
+  .aai-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .aai-cards {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .aai-card {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .aai-description {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices (mobile phones, below 480px) */
+@media (max-width: 480px) {
+  .aadarsh-container {
+    bottom: 0px;
+    padding: 0.5rem;
+  }
+
+  .aai-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .aai-cards {
+    gap: 1rem;
+  }
+
+  .aai-card {
+    width: 100%;
+    max-width: 280px;
+    height: 93px;
+    padding: 0.75rem;
+  }
+
+  .aai-description {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
 }
 
 
@@ -626,13 +922,85 @@
   color: #2d2d2d;
 }
 
+/* Medium devices (tablets, <= 1024px) */
+@media (max-width: 1024px) {
+  .adoption-container {
+    gap: 4rem;
+    padding: 0 2rem;
+  }
 
-/* Footer Base */
-.footer-1{
+  .adoption-title {
+    font-size: 2rem;
+  }
+
+  .adoption-description {
+    font-size: 1rem;
+  }
+
+  .adoption-image {
+    min-height: 500px;
+  }
+}
+
+/* Small devices (phones, <= 768px) */
+@media (max-width: 768px) {
+  .adoption-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .adoption-image,
+  .adoption-content {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .adoption-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .adoption-description {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .adoption-section {
+    padding: 2rem;
+    position: relative;
+    top: -117px;
+  }
+}
+
+/* Extra small devices (<= 480px) */
+@media (max-width: 480px) {
+  .adoption-title {
+    font-size: 1.6rem;
+    position: relative;
+    top: -434px;
+  }
+
+  .adoption-description {
+    font-size: 0.9rem;
+  }
+
+  .adoption-image {
+    min-height: 400px;
+    position: relative;
+        top: 129px;
+  }
+}
+
+
+
+/* Base styles you gave */
+.footer-1 {
   position: relative;
   bottom: 815px;
 }
-.footer {
+
+.footer-2 {
   background-color: #f2d4a2;
   color: #573c27;
   padding: 2rem 1rem;
@@ -640,8 +1008,7 @@
   font-size: 0.95rem;
 }
 
-/* Container */
-.footer-container {
+.footer-1-container {
   max-width: 1120px;
   margin: 0 auto;
   display: flex;
@@ -649,23 +1016,31 @@
   gap: 2rem;
 }
 
-/* Responsive Row Layout */
+/* Responsive Row Layout for tablets and up */
 @media (min-width: 768px) {
-  .footer-container {
+  .footer-1-container {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
 }
 
+/* Footer bottom section */
+.footer-1-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #573c27;
+}
+
 /* Left Section */
-.footer-left h1 {
+.footer-1-left h1 {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.footer-left p {
+.footer-1-left p {
   margin-top: 0.25rem;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -673,22 +1048,22 @@
 }
 
 /* Social Icons */
-.social-icons {
+.social-1-icons {
   margin-top: 1.2rem;
 }
 
-.social-icons p {
+.social-1-icons p {
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
-.icon-group {
+.icon-1-group {
   display: flex;
   gap: 0.75rem;
   margin-top: 0.25rem;
 }
 
-.icon {
+.icon-1 {
   background-color: #16333e;
   padding: 0.45rem;
   border-radius: 50%;
@@ -703,46 +1078,126 @@
   transition: background-color 0.3s ease;
 }
 
-.icon:hover {
+.icon-1:hover {
   background-color: #1e4c5a;
 }
 
 /* Right Section */
-.footer-right {
+.footer-1-right {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
   font-size: 0.95rem;
 }
 
-@media (min-width: 768px) {
-  .footer-right {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+/* ----------- MEDIA QUERIES ----------- */
+
+/* Tablets and small desktops */
+@media (max-width: 1024px) {
+  .footer-1 {
+    bottom: 600px; /* adjust as needed */
+  }
+
+  .footer-2 {
+    padding: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-1-container {
+    gap: 1.5rem;
+  }
+
+  .footer-1-left p {
+    max-width: 250px;
   }
 }
 
-.footer-right p {
-  margin-top: 0.3rem;
-  cursor: pointer;
-  transition: color 0.2s ease;
+/* Mobile phones and smaller tablets */
+@media (max-width: 768px) {
+  .footer-1 {
+    bottom: 400px;
+  }
+
+  .footer-2 {
+    padding: 1.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-1-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-1-left p {
+    max-width: 100%;
+  }
+
+  .footer-1-right {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-1-bottom {
+    font-size: 0.85rem;
+    padding-top: 1rem;
+  }
 }
 
-.footer-right p:hover {
-  color: #3b2f2f;
-  text-decoration: underline;
+/* Very small phones */
+@media (max-width: 480px) {
+  .footer-1 {
+    bottom: 217px;
+  }
+
+  .footer-2 {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .icon-1 {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .footer-1-bottom {
+    font-size: 0.75rem;
+  }
 }
 
-/* Bottom Line */
-.footer-bottom {
-  margin-top: 2rem;
-  text-align: center;
-  font-style: italic;
-  font-size: 0.85rem;
-  color: #3b2f2f;
-}
 
 .app-background-1 {
-  background-image: url('images/background.png');
+  background-image: url('/images/background.png');
   height: 485vh;
-
 }
+
+
+/* For screens <= 1080px (small desktops/laptops) */
+@media (max-width: 1080px) {
+  .app-background-1 {
+    height: 400vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* For screens <= 768px (tablets) */
+@media (max-width: 768px) {
+  .app-background-1 {
+    height: 300vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* For screens <= 480px (mobile phones) */
+@media (max-width: 480px) {
+  .app-background-1 {
+    height: 600vh;
+    width: 469px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
