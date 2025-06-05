@@ -33,7 +33,7 @@ function Donate({ currentLang }) {
     name: '',
     email: '',
     phone: '',
-    donation: ''
+    message: ''  // use message to match your backend
   });
 
   const [status, setStatus] = useState('');
@@ -55,7 +55,7 @@ function Donate({ currentLang }) {
 
       if (res.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', phone: '', donation: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
         throw new Error('Failed to submit');
       }
@@ -95,8 +95,8 @@ function Donate({ currentLang }) {
           />
           <input
             type="text"
-            name="donation"
-            value={formData.donation}
+            name="message"  // <-- here use message to match backend schema
+            value={formData.message}
             onChange={handleChange}
             placeholder={langText.donation}
             required
