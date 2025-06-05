@@ -32,10 +32,10 @@ const FoundingHistory = ({ currentLang }) => {
         '2021': '२०२१ मध्ये आमचा विस्तार झाला...',
       },
       infoBlocks: [
-        { img: '/images/School Building.png', alt: 'आयकॉन १', text: 'शाळेचा इतिहास येथे लिहा.' },
-        { img: '/images/Student Male.png', alt: 'आयकॉन २', text: 'विद्यार्थ्यांविषयी माहिती.' },
-        { img: '/images/Teacher.png', alt: 'आयकॉन ३', text: 'शिक्षकांचा परिचय.' },
-        { img: '/images/Trophy.png', alt: 'आयकॉन ४', text: 'प्राप्ती व बक्षिसे.' },
+        { img: '/images/School Building.png', alt: 'आयकॉन १', text: '६ शैक्षणिक संस्था' },
+        { img: '/images/Student Male.png', alt: 'आयकॉन २', text: '२००० विद्यार्थी' },
+        { img: '/images/Teacher.png', alt: 'आयकॉन ३', text: '३५+ सुशिक्षित कर्मचारी' },
+        { img: '/images/Trophy.png', alt: 'आयकॉन ४', text: 'वेगवेगळ्या पातळ्यांवर १० पुरस्कार' },
       ],
     },
   };
