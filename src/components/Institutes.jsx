@@ -20,13 +20,12 @@ const Institutes = ({ currentLang }) => {
       title: 'आपली संस्थाने',
       institutes: [
         { name: 'स्वातंत्र्य सेनानी कै. भाऊसाहेब कृष्णा पाटील माध्यमिक विद्यालय, इनाम धामणी', img: '/images/institute1.jpg' },
-        { name: 'कै. चंद्राई भाऊसाहेब पाटील माध्यमिक विद्यालय, वुडी', img: '/images/institute2.jpg' },
-        { name: 'परमहंस यशवंतबाबा महाराज माध्यमिक विद्यालय, वामणोळी', img: '/images/institute3.jpg' },
-        { name: 'सहकारमहर्षी कै. विष्णुआण्णा पाटील माध्यमिक विद्यालय, सावळी', img: '/images/institute4.jpg' },
-        { name: 'स्व. मोहनराव शिंदे माध्यमिक विद्यालय, विजयनगर', img: '/images/institute5.jpg' },
+        { name: 'श्रीमती चंद्राई भाऊसो पाटील माध्यमिक विद्यालय, वुडी', img: 'image/Institutes/chandrabai.png' },
+        { name: 'परमहंस यशवंतबाबा महाराज माध्यमिक विद्यालय, वामणोळी', img: 'image/Institutes/yashwant.png' },
+        { name: 'सहकारमहर्षी कै. विष्णुआण्णा पाटील माध्यमिक विद्यालय, सावळी', img: 'image/Institutes/vishnuanna.png' },
+        { name: 'स्व. मोहनराव शिंदे माध्यमिक विद्यालय, विजयनगर', img: 'image/Institutes/gajanan.png' },
         { name: 'संभाजी औद्योगिक प्रशिक्षण केंद्र, इनाम धामणी', img: '/images/institute6.jpg' },
         { name: 'डिजिटल लाईन हेल्थ क्लब, विश्रामबाग, सांगली', img: '/images/institute7.jpg' },
-        { name: 'स्वातंत्र्य सेनानी कै. भाऊसाहेब कृष्णा पाटील माध्यमिक विद्यालय, इनाम धामणी', img: '/images/institute8.jpg' },
       ]
     }
   };

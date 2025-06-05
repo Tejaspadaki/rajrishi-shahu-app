@@ -28,7 +28,7 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
     { path: '/about', en: 'About Us', mr: 'आमच्याबद्दल' },
     { path: '/institutions', en: 'Institutions', mr: 'संस्था' },
     { path: '/news', en: 'News & Events', mr: 'बातम्या आणि कार्यक्रम' },
-    { path: '/gallery', en: 'Gallery', mr: 'गॅलरी' },
+    { path: '/events', en: 'Gallery', mr: 'गॅलरी' },
     { path: '/contact', en: 'Contact Us', mr: 'संपर्क करा' },
   ];
 

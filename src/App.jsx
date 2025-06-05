@@ -8,6 +8,9 @@ import {
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import FoundingHistory from './components/FoundingHistory';
+import Events from './components/Events';
+import EventsGallery from './components/Gallery'
+import DirectorBoard from './components/DirectorBoard';
 import './App.css';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
@@ -50,6 +53,9 @@ const AppContent = ({ currentLang, setCurrentLang }) => {
         <Route path="/gallery" element={<Gallery currentLang={currentLang} />} />
         <Route path="/contact" element={<Contact currentLang={currentLang} />} />
         <Route path="/donate" element={<Donate currentLang={currentLang} />} />
+        <Route path="/events" element={<Events currentLang={currentLang} />} />
+        <Route path="/gallery/:categoryId" element={<EventsGallery currentLang={currentLang} />} />
+        <Route path="/director-board" element={<DirectorBoard currentLang={currentLang} />} />
       </Routes>
 
       {!isHome && <Footer currentLang={currentLang} />}
