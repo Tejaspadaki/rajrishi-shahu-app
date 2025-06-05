@@ -135,18 +135,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
             </div>
           </section>
 
-          {/* AADARSH AAI */}
-          <section className="aadarsh-container">
-            <div className="aai-page">
-              <h1 className="aai-title">{a.title}</h1>
-              <div className="aai-cards">
-                {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className="aai-card"></div>
-                ))}
-              </div>
-              <p className="aai-description">{a.description}</p>
-            </div>
-          </section>
+         
 
           {/* ADOPTION SECTION */}
           <section className="adoption-section">
@@ -163,6 +152,20 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
                 </h1>
                 <p className="adoption-description">{adoptionContent.description}</p>
               </div>
+            </div>
+          </section>
+
+
+           {/* AADARSH AAI */}
+           <section className="aadarsh-container">
+            <div className="aai-page">
+              <h1 className="aai-title">{a.title}</h1>
+              <div className="aai-cards">
+                {[1, 2, 3, 4].map((item) => (
+                  <div key={item} className="aai-card"></div>
+                ))}
+              </div>
+              <p className="aai-description">{a.description}</p>
             </div>
           </section>
 

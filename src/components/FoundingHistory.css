@@ -69,11 +69,9 @@
   }
   
   .history-decorator {
-    font-size: 2rem;
-    color: #d2a24c;
+    display: flex;
+    justify-content: center;
     margin-bottom: 2rem;
-    position: relative;
-    right: -645px;
   }
   
   .history-separator {
