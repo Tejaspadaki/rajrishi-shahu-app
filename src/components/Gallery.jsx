@@ -33,7 +33,7 @@ const Gallery = () => {
 
   return (
     <section className="gallery-container">
-       <h2 className="gallery-title text-center text-3xl font-bold text-[#502D18]">{selectedCategory.name1} Gallery</h2>
+       <h2 className="gallery-title text-center text-3xl font-bold text-[#502D18]">{selectedCategory.name1} </h2>
       <div className="flex justify-start">
        {/* <button 
         onClick={() => navigate('/events')} 
