@@ -14,3 +14,7 @@ body, html, #root {
   width: 469px;
   }
 }
+
+*{
+  font-family: 'Tiro Devanagari Marathi', serif;
+}

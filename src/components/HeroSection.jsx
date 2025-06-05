@@ -110,7 +110,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
             <div className="section">
               <img src="/images/6.png" alt="Our Vision Top" className="section-image top" />
               <h2 className="section-title">
-                {currentLang === 'en' ? 'Our Vision' : 'आपली दृष्टीकोन'}
+                {currentLang === 'en' ? 'Our Vision' : 'आमचा दृष्टिकोन'}
               </h2>
               <p className="section-text">
                 {currentLang === 'en'
@@ -124,7 +124,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
             <div className="section">
               <img src="/images/6.png" alt="Our Mission Top" className="section-image top" />
               <h2 className="section-title">
-                {currentLang === 'en' ? 'Our Mission' : 'आपले ध्येय'}
+                {currentLang === 'en' ? 'Our Mission' : 'आमचे ध्येय'}
               </h2>
               <p className="section-text">
                 {currentLang === 'en'
