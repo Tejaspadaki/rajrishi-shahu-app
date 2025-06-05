@@ -505,7 +505,7 @@
 /* Contact Page */
 .contact-page-1{
   position: relative;
-  bottom: 635px;
+  bottom: 554px;
 }
 .contact-page {
   display: flex;
@@ -882,7 +882,7 @@
   padding: 2rem 4rem;
   font-family: 'Georgia', serif;
   position: relative;
-  bottom: 640px;
+  bottom: 520px;
 }
 
 .adoption-container {
@@ -997,7 +997,7 @@
 /* Base styles you gave */
 .footer-1 {
   position: relative;
-  bottom: 667px;
+  bottom: 586px;
 }
 
 .footer-2 {
@@ -1169,7 +1169,7 @@
 
 .app-background-1 {
   background-image: url('/images/background.png');
-  height: 513vh;
+  height: 520vh;
 }
 
 
