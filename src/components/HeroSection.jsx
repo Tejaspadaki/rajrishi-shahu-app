@@ -156,8 +156,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
               </p>
               <img src="/images/5.png" alt="Our Vision Bottom" className="section-image bottom" />
             </div>
-            <hr className="section-separator" />
-
+            
             <div className="section">
               <img src="/images/6.png" alt="Our Mission Top" className="section-image top" />
               <h2 className="section-title">
