@@ -55,7 +55,9 @@ const FoundingHistory = ({ currentLang }) => {
   return (
     <div className="history-section">
       <h2 className="history-title">{t.title}</h2>
-      <div className="history-decorator"><img src="/images/6.png" alt="decorator" /></div>
+      <div className="history-decorator">
+  <img src="/images/6.png" alt="decorator" />
+</div>
 
       <div className="timeline">
         {Object.entries(t.years).map(([year, text]) => renderCard(year, text))}

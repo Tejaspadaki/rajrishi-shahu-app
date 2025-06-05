@@ -108,7 +108,7 @@
   margin-bottom: 10px;
   font-weight: bold;
   position: relative;
-  left: 338px;
+  left: 441px;
   top: -70px;
 }
 
@@ -971,7 +971,7 @@
   .adoption-section {
     padding: 2rem;
     position: relative;
-    bottom: 455px;
+    bottom: 40px;
   }
 }
 
@@ -990,7 +990,7 @@
   .adoption-image {
     min-height: 400px;
     position: relative;
-        top: 129px;
+    top: 70px;
   }
 }
 
@@ -1171,7 +1171,7 @@
 
 .app-background-1 {
   background-image: url('/images/background.png');
-  height: 520vh;
+  height: 879vh;
 }
 
 
@@ -1196,10 +1196,61 @@
 /* For screens <= 480px (mobile phones) */
 @media (max-width: 480px) {
   .app-background-1 {
-    height: 600vh;
+    height: 1645vh;
     width: 469px;
     background-size: cover;
     background-position: center;
   }
 }
 
+
+.institutes{
+  position: relative;
+  bottom: 430px;
+}
+
+.FoundingHistory{
+  position: relative;
+  top: -450px;
+}
+
+.Gallery{
+  position: relative;
+  top: -450px;
+}
+
+/* Base Styles (Desktop) */
+.institutes,
+.FoundingHistory,
+.Gallery {
+  position: relative;
+  top: -450px; /* ✅ Use top consistently */
+}
+
+/* 1080px screens */
+@media screen and (max-width: 1080px) {
+  .institutes,
+  .FoundingHistory,
+  .Gallery {
+    position: relative;
+    top: -360px;
+  }
+}
+
+/* Tablets (768px and below) */
+@media screen and (max-width: 768px) {
+  .institutes,
+  .FoundingHistory,
+  .Gallery {
+    top: -220px;
+  }
+}
+
+/* Mobile devices (480px and below) */
+@media screen and (max-width: 480px) {
+  .institutes,
+  .FoundingHistory,
+  .Gallery {
+    top: -120px;
+  }
+}

@@ -7,6 +7,9 @@ import footerText from './data/footerText';
 import contactText from './data/contactText';
 import content from './data/content';
 import aadarshText from './data/aadarshText';
+import Institutes from './Institutes';
+import FoundingHistory from './FoundingHistory';
+import Gallery from './Events';
 
 export default function HeroSection({ currentLang, setCurrentLang }) {
   const contentT = heroText[currentLang] || heroText.en;
@@ -105,6 +108,40 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
             </div>
           </section>
 
+           {/* ADOPTION SECTION */}
+           <section className="adoption-section">
+            <div className="adoption-container">
+              <div className="adoption-image" />
+              <div className="adoption-content">
+                <h1 className="adoption-title">
+                  {adoptionContent.title.split('\n').map((line, index) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </h1>
+                <p className="adoption-description">{adoptionContent.description}</p>
+              </div>
+            </div>
+          </section>
+
+          {/* AADARSH AAI */}
+          <section className="aadarsh-container">
+            <div className="aai-page">
+              <h1 className="aai-title">{a.title}</h1>
+              <div className="aai-cards">
+                {[1, 2, 3, 4].map((item) => (
+                  <div key={item} className="aai-card"></div>
+                ))}
+              </div>
+              <p className="aai-description">{a.description}</p>
+            </div>
+          </section>
+
+
+
+          
           {/* OUR VISION / MISSION */}
           <section className="about-us-container">
             <div className="section">
@@ -136,39 +173,19 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
           </section>
 
          
-
-          {/* ADOPTION SECTION */}
-          <section className="adoption-section">
-            <div className="adoption-container">
-              <div className="adoption-image" />
-              <div className="adoption-content">
-                <h1 className="adoption-title">
-                  {adoptionContent.title.split('\n').map((line, index) => (
-                    <React.Fragment key={index}>
-                      {line}
-                      <br />
-                    </React.Fragment>
-                  ))}
-                </h1>
-                <p className="adoption-description">{adoptionContent.description}</p>
-              </div>
-            </div>
+          <section className='institutes'>
+          <Institutes currentLang={currentLang} />
           </section>
-
-
-           {/* AADARSH AAI */}
-           <section className="aadarsh-container">
-            <div className="aai-page">
-              <h1 className="aai-title">{a.title}</h1>
-              <div className="aai-cards">
-                {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className="aai-card"></div>
-                ))}
-              </div>
-              <p className="aai-description">{a.description}</p>
-            </div>
+          
+          <section className='FoundingHistory'>
+            <FoundingHistory currentLang={currentLang} />
           </section>
+          <section className='Gallery'>
+          <Gallery currentLang={currentLang}/>
+          </section>
+         
 
+           
           {/* CONTACT SECTION */}
           <section className="contact-page-1">
         <div className="contact-page">
