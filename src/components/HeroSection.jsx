@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Homepage.css';
+import axios from 'axios';
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import heroText from './data/heroText';
 import footerText from './data/footerText';
@@ -8,115 +9,6 @@ import content from './data/content';
 import aadarshText from './data/aadarshText';
 
 export default function HeroSection({ currentLang, setCurrentLang }) {
-  const heroText = {
-    en: {
-      quote: <>Be Successful,<br /> Be Victorious</>,
-      title: (
-        <>
-          Rajarshi Shahu <br /> Shikshan Sanstha,
-        </>
-      ),
-      subtitle: 'Inam Dhamani, Sangli',
-      description: `Rajarshi Shahu Shikshan Sanstha, Inam Dhamni, Sangli, inspired by Chhatrapati Rajarshi Shahu Maharaj, is dedicated to providing quality education to poor, Dalit, farmer, and economically weaker students in rural areas. The institution addresses the lack of high school facilities in remote regions, where the absence of education led to rising child labor and child marriage. To combat this, the Sanstha established schools in five villages along with a Polytechnic and an Industrial Training Institute (ITI). It also undertakes various social and educational initiatives such as de-addiction programs, moral education, gymnasiums, and student adoption schemes. The primary goal of the institution is to drive social transformation through education.`,
-      inspiration: 'Inspiration: Chhatrapati Rajarshi Shahu Maharaj',
-      tribute: 'Heartfelt Tribute: Late. Smt. Malushi Vitthalrao Patil (Didi)',
-      president: 'Mr. Vitthalrao Bhausaheb Patil (Kakaji)\nPresident',
-      secretary: 'Mr. Gaganraj Vitthalrao Patil (Maddy)\nSecretary',
-    },
-    mr: {
-      quote: '|| यशवंत हो, जयवंत हो ||',
-      title: 'राजर्षी शाहू शिक्षण संस्था,',
-      subtitle: 'इनाम धामणी, सांगली',
-      description: `राजर्षी शाहू शिक्षण संस्था, इनाम धामणी, सांगली ही संस्था छत्रपती राजर्षी शाहू महाराज यांच्या प्रेरणेतून स्थापन करण्यात आली असून, ही संस्था ग्रामीण भागातील गरीब, दलित, शेतकरी व आर्थिकदृष्ट्या दुर्बल विद्यार्थ्यांसाठी गुणवत्तापूर्ण शिक्षण उपलब्ध करून देण्यासाठी कार्यरत आहे. संस्था अशा भागात शिक्षण पोहोचवते जिथे हायस्कूलची सुविधा नव्हती आणि शिक्षणाविना मुलांमध्ये बालमजुरी व बालविवाह वाढत होते. याला आळा घालण्यासाठी संस्थेने पाच गावांमध्ये शाळा सुरू करून, तंत्रनिकेतन आणि औद्योगिक प्रशिक्षण संस्था स्थापन केली. याशिवाय संस्था व्यसनमुक्ती, नैतिक शिक्षण, व्यायामशाळा, आणि विद्यार्थीदत्तक योजना यासारख्या उपक्रमांद्वारे समाजाचे सामाजिक आणि शैक्षणिक उन्नतीचे कार्य करत आहे. शिक्षणाच्या माध्यमातून समाज परिवर्तन घडवणे हा संस्थेचा मुख्य उद्देश आहे`,
-      inspiration: 'प्रेरणास्थान :\nछत्रपती राजर्षी शाहू महाराज',
-      tribute: 'भावपूर्ण श्रद्धांजली\nवै. सौ. मालुषी विठ्ठलराव पाटील (दीदी)',
-      president: 'श्री. विठ्ठलराव भाऊसाहेब पाटील (काकाजी)\nअध्यक्ष',
-      secretary: 'श्री. गगनराज विठ्ठलराव पाटील (मॅड्या)\nसचिव.',
-    },
-  };
-
-  const footerText = {
-    en: {
-      title: 'Rajarshi Shahu Shikshan Sanstha',
-      location: 'Inam Dhamani, Sangli',
-      follow: 'Follow us on:',
-      links: {
-        home: 'Home',
-        about: 'About Us',
-        institutions: 'Institutions',
-        news: 'News & Events',
-        gallery: 'Gallery',
-        contact: 'Contact Us',
-        donate: 'Donate',
-        trust: 'Trust Info',
-      },
-    },
-    mr: {
-      title: 'राजर्षी शाहू शिक्षण संस्था',
-      location: 'इनाम धामणी, सांगली',
-      follow: 'आम्हाला फॉलो करा:',
-      links: {
-        home: 'मुख्यपृष्ठ',
-        about: 'आमच्याबद्दल',
-        institutions: 'संस्थाने',
-        news: 'बातम्या आणि कार्यक्रम',
-        gallery: 'गॅलरी',
-        contact: 'संपर्क करा',
-        donate: 'दान करा',
-        trust: 'विश्वास',
-      },
-    },
-  };
-
-  const contactText = {
-    en: {
-      contactUs: 'CONTACT US',
-      infoText: 'For more information,',
-      namePlaceholder: 'Your Name',
-      emailPlaceholder: 'Your E-Mail',
-      mobilePlaceholder: 'Your Mobile Number',
-      messagePlaceholder: 'Your Message',
-      submitBtn: 'Submit',
-      stayConnected: 'Stay Connected: Get in Touch with Us',
-      contactDetails: ['1234567890', '9876543210'],
-      donateBtn: 'DONATE',
-    },
-    mr: {
-      contactUs: 'आमच्याशी संपर्क साधा',
-      infoText: 'अधिक माहितीसाठी,',
-      namePlaceholder: 'तुमचे नाव',
-      emailPlaceholder: 'तुमचा ई-मेल',
-      mobilePlaceholder: 'तुमचा मोबाइल नंबर',
-      messagePlaceholder: 'तुमचा संदेश',
-      submitBtn: 'सबमिट करा',
-      stayConnected: 'संपर्कात रहा: आमच्याशी संपर्क करा',
-      contactDetails: ['१२३४५६७८९०', '९८७६५४३२१०'],
-      donateBtn: 'दान करा',
-    },
-  };
-
-  const content = {
-    en: {
-      title: "Adoption of\nChildrens",
-      description: "Lorem ipsum dolor sit amet consectetur..."
-    },
-    mr: {
-      title: "मुलांचे दत्तक घेणे",
-      description: "लोरम इप्सम डोलर सिट अ‍ॅमेट कॉन्सेकटेटर..."
-    }
-  };
-
-  const aadarshText = {
-    en: {
-      title: 'Aadarsh Aai',
-      description: `Lorem ipsum dolor sit amet consectetur...`,
-    },
-    mr: {
-      title: 'आदर्श आई',
-      description: `लोरेम इप्सम डोलर सिट अमेट कॉन्सेक्टेचर...`,
-    },
-  };
-
   const contentT = heroText[currentLang] || heroText.en;
   const contactT = contactText[currentLang] || contactText.en;
   const a = aadarshText[currentLang] || aadarshText.en;
@@ -140,7 +32,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contact', formData);
+      await axios.post('https://api-ffgj.onrender.com/api/contact', formData);
       setStatus({ type: 'success', message: 'Message sent successfully!' });
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (err) {
@@ -148,8 +40,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
       console.error(err);
     }
   };
-
-  return (
+    return (
     <>
       <section>
         <div className="app-background-1">
@@ -339,6 +230,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
           </div>
         </div>
       </section>
+
 
           {/* FOOTER */}
           <section className='footer-1'>
