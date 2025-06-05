@@ -1,0 +1,83 @@
+.director-board {
+    padding: 60px 20px;
+    background-image: url('/image/bg-pattern.png');
+    background-size: cover;
+    background-repeat: repeat;
+    min-height: 100vh;
+    font-family: 'Georgia', serif;
+  }
+  
+  .director-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #3d1f00;
+    font-weight: bold;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .director-title::after {
+    content: '';
+    display: block;
+    margin: 10px auto 0;
+    width: 100px;
+    height: 20px;
+    background: url('/image/ornament.png') no-repeat center;
+    background-size: contain;
+  }
+  
+  /* Each row */
+  .director-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  /* Card */
+  .director-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    transition: all 0.3s ease;
+  }
+  
+  .director-card:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .director-image-wrapper {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 15px;
+    border: 3px solid #d6781d;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: #eee;
+    box-sizing: border-box;
+  }
+  
+  .director-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .director-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3d1f00;
+    line-height: 1.4;
+  }
+  
+  .director-designation {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #3d1f00;
+  }
+  

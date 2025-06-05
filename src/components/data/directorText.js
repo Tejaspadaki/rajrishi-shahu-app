@@ -11,12 +11,12 @@ const directorText = {
       {
         id: 2,
         name: 'Mr. Sachin Sambhajirao Patil (Anna)',
-        designation: 'President',
+        designation: 'Vice-President',
         img: '/image/6.jpg',
       },
       {
         id: 3,
-        name: 'Mrs. Malushree Vitthalrao Patil (Didi)',
+        name: 'Mr. Gaganraj Vitthalrao Patil (Bhaiyya)',
         designation: 'Secretary',
         img: '/image/6.jpg',
       },
@@ -34,12 +34,6 @@ const directorText = {
       },
       {
         id: 6,
-        name: 'Mr. Gaganraj Vitthalrao Patil (Bhaiyya)',
-        designation: 'Member',
-        img: '/image/9.jpg',
-      },
-      {
-        id: 7,
         name: 'Mrs. Mayuri Udaysingh Ghorpade (Mai)',
         designation: 'Member',
         img: '/image/9.jpg',
@@ -63,7 +57,7 @@ const directorText = {
       },
       {
         id: 3,
-        name: 'सौ. मालुश्री विठ्ठलराव  पाटील (दिदी)',
+        name: 'श्री. गगनराज विठ्ठलराव पाटील (भैय्या)',
         designation: 'सचिव',
         img: '/image/6.jpg',
       },
@@ -81,12 +75,6 @@ const directorText = {
       },
       {
         id: 6,
-        name: 'श्री. गगनराज विठ्ठलराव पाटील (भैय्या)',
-        designation: 'सदस्य',
-        img: '/image/9.jpg',
-      },
-      {
-        id: 7,
         name: 'सौ. मयुरी उदयसिंह घोरपडे (माई)',
         designation: 'सदस्य',
         img: '/image/9.jpg',
