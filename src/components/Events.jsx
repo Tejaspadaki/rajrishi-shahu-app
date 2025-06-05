@@ -8,7 +8,7 @@ import './css/events.css';
 export const eventData = [
     {
         id: 1,
-        imgSrc: '/image/10.jpg',
+        imgSrc: '/image/AdarshAai/4.png',
         imgTitle: 'आदर्श आई पुरस्कार',
         imgData: 'On March 14, 2021, Rajarshi Shahu Shikshan Sanstha, Inam Dhamani organized the grand Rajmata Jijau Adarsh Aai Award Ceremony to honor exemplary mothers for their societal and familial contributions. Dignitaries present included Hon. Ramdas Athawale, Hon. Nana Patole, Vikram Sawant, Deepakbaba Shinde, and other prominent leaders. The goal of this award is to celebrate and recognize the silent strength of women and promote women empowerment through acknowledgment and appreciation.'
     },
@@ -38,7 +38,7 @@ export const eventData = [
     },
     {
         id: 6,
-        imgSrc: '/image/10.jpg',
+        imgSrc: '/image/sports/2.png',
         imgTitle: 'क्रीडा महोत्सव',
         imgData: 'The Sports Festival was held at Bhauso Krishna Patil School, Inam Dhamani. Events like cricket, chess, and rangoli competition encouraged student participation and sportsmanship.'
     },

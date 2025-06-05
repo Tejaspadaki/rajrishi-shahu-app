@@ -6,7 +6,7 @@ import { FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter } from 'react-icons/
 export default function HeroSection({ currentLang }) {
   const heroText = {
     en: {
-      quote: <>Be Successful,<br /> Be Victorious</>,
+      quote: '|| Be Successful, Be Victorious ||',
       title: (
         <>
           Rajarshi Shahu <br /> Shikshan Sanstha,
@@ -241,27 +241,27 @@ export default function HeroSection({ currentLang }) {
       </section>
 
       <section className='footer-1'>
-      <footer className="footer-2">
+      <footer className="footer">
       <div className="footer-container">
         {/* Left Section */}
-        <div className="footer-1-left">
+        <div className="footer-left">
           <h1>{t.title}</h1>
           <p>{t.location}</p>
 
           {/* Social Media Icons */}
-          <div className="social-1-icons">
+          <div className="social-icons">
             <p>{t.follow}</p>
-            <div className="icon-1-group">
-              <div className="icon-1"><FaInstagram /></div>
-              <div className="icon-1"><FaFacebookF /></div>
-              <div className="icon-1"><FaLinkedinIn /></div>
-              <div className="icon-1"><FaXTwitter /></div>
+            <div className="icon-group">
+              <div className="icon"><FaInstagram /></div>
+              <div className="icon"><FaFacebookF /></div>
+              <div className="icon"><FaLinkedinIn /></div>
+              <div className="icon"><FaXTwitter /></div>
             </div>
           </div>
         </div>
 
         {/* Right Sections */}
-        <div className="footer-1-right">
+        <div className="footer-right">
           <div>
             <p>{t.links.home}</p>
             <p>{t.links.about}</p>
@@ -280,7 +280,7 @@ export default function HeroSection({ currentLang }) {
       </div>
 
       {/* Bottom */}
-      <div className="footer-1-bottom">
+      <div className="footer-bottom">
   {currentLang === 'mr'
     ? '© 2025 राजर्षी शाहू शिक्षण संस्था. सर्व हक्क राखीव.'
     : '© 2025 Rajarshi Shahu Shikshan Sanstha. All rights reserved.'}
