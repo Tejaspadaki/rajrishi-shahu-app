@@ -1,5 +1,5 @@
 import React from 'react';
-import directorText from '../data/directorText';
+import directorText from '../components/data/directorText';
 
 const DirectorBoard = ({ currentLang }) => {
   const { title, members } = directorText[currentLang] || directorText.en;
