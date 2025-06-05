@@ -103,7 +103,7 @@
 }
 
 .hero-title {
-  font-size: 53px;
+  font-size: 49px;
   color: #502D18;
   margin-bottom: 10px;
   font-weight: bold;
@@ -380,7 +380,7 @@
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
-  top: -529px;
+  top: -466px;
 }
 
 /* Section Layout */
@@ -505,7 +505,7 @@
 /* Contact Page */
 .contact-page-1{
   position: relative;
-  bottom: 780px;
+  bottom: 635px;
 }
 .contact-page {
   display: flex;
@@ -750,7 +750,7 @@
 
 .aadarsh-container{
   position: relative;
-  bottom: 574px;
+  bottom: 501px;
   }
 .aai-page {
   min-height: 100vh;
@@ -882,7 +882,7 @@
   padding: 2rem 4rem;
   font-family: 'Georgia', serif;
   position: relative;
-  bottom: 768px;
+  bottom: 640px;
 }
 
 .adoption-container {
@@ -997,7 +997,7 @@
 /* Base styles you gave */
 .footer-1 {
   position: relative;
-  bottom: 815px;
+  bottom: 667px;
 }
 
 .footer-2 {
@@ -1169,7 +1169,7 @@
 
 .app-background-1 {
   background-image: url('/images/background.png');
-  height: 485vh;
+  height: 513vh;
 }
 
 
