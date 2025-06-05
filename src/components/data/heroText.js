@@ -7,7 +7,7 @@ const heroText = {
       inspiration: 'Inspiration: Chhatrapati Rajarshi Shahu Maharaj',
       tribute: 'Heartfelt Tribute: Late. Smt. Malushi Vitthalrao Patil (Didi)',
       president: 'Mr. Vitthalrao Bhausaheb Patil (Kakaji)\nPresident',
-      secretary: 'Mr. Gaganraj Vitthalrao Patil (Maddy)\nSecretary',
+      secretary: 'Mr. Gaganraj Vitthalrao Patil (Bhaiyaa)\nSecretary',
     },
     mr: {
       quote: '|| यशवंत हो, जयवंत हो ||',
@@ -17,7 +17,7 @@ const heroText = {
       inspiration: 'प्रेरणास्थान :\nछत्रपती राजर्षी शाहू महाराज',
       tribute: 'भावपूर्ण श्रद्धांजली\nवै. सौ. मालुषी विठ्ठलराव पाटील (दीदी)',
       president: 'श्री. विठ्ठलराव भाऊसाहेब पाटील (काकाजी)\nअध्यक्ष',
-      secretary: 'श्री. गगनराज विठ्ठलराव पाटील (मॅड्या)\nसचिव.',
+      secretary: 'श्री. गगनराज विठ्ठलराव पाटील (भैय्या)\nसचिव.',
     },
   };
   
