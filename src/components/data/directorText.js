@@ -46,7 +46,6 @@ const directorText = {
       },
     ],
   },
-
   mr: {
     title: 'संचालक मंडळ',
     members: [
@@ -64,7 +63,7 @@ const directorText = {
       },
       {
         id: 3,
-        name: 'सौ. मालुश्री विठ्ठलराव पाटील (दिदी)',
+        name: 'सौ. मालुश्री विठ्ठलराव  पाटील (दिदी)',
         designation: 'सचिव',
         img: '/image/6.jpg',
       },
@@ -88,7 +87,7 @@ const directorText = {
       },
       {
         id: 7,
-        name: 'सौ. मयुरी उदयसिंह घोरपडे (माई)',
+        name: 'सौ. मयुरी उदयसिंह घोरपडे (माई)',
         designation: 'सदस्य',
         img: '/image/9.jpg',
       },
