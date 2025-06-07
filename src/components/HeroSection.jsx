@@ -74,7 +74,8 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
                   <h1
                     className="hero-title"
                     dangerouslySetInnerHTML={{ __html: contentT.title }}
-                  />
+                    style={{ fontFamily: "'Tiro Devanagari Marathi', serif" }}
+                  ></h1>
                   <h2 className="hero-subtitle">{contentT.subtitle}</h2>
                   <br />
                   <br />
@@ -128,16 +129,21 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
 
           {/* AADARSH AAI */}
           <section className="aadarsh-container">
-            <div className="aai-page">
-              <h1 className="aai-title">{a.title}</h1>
-              <div className="aai-cards">
-                {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className="aai-card"></div>
-                ))}
-              </div>
-              <p className="aai-description">{a.description}</p>
-            </div>
-          </section>
+  <div className="aai-page">
+    <h1 className="aai-title">{a.title}</h1>
+    <div className="aai-carousel-wrapper">
+      <div className="aai-cards auto-scroll">
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+          <div key={item} className="aai-card">
+            {/* Optional: Card content */}
+          </div>
+        ))}
+      </div>
+    </div>
+    <p className="aai-description">{a.description}</p>
+  </div>
+</section>
+
 
 
 
@@ -154,7 +160,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
                   ? "The vision of Rajarshi Shahu Shikshan Sanstha, Inam Dhamni, Sangli, is to provide modern, moral, and quality education to students from rural, poor, Dalit, and economically weaker sections of society. The institution aims to bring about social transformation through education and to nurture students into empowered, cultured, and self-reliant citizens. Its core principles include rural education, a de-addiction-driven society, moral value-based learning, and holistic development. Believing that education is the only effective path to social progress, the institution continuously implements quality and student-centric initiatives."
                   : 'राजर्षी शाहू शिक्षण संस्था, इनाम धामणी, सांगली या संस्थेचा दृष्टिकोन म्हणजे ग्रामीण, गरीब, दलित आणि आर्थिकदृष्ट्या दुर्बल वर्गातील विद्यार्थ्यांना आधुनिक, नैतिक व गुणवत्तापूर्ण शिक्षण देणे. संस्थेचे उद्दिष्ट म्हणजे शिक्षणाच्या माध्यमातून समाज परिवर्तन घडवणे आणि विद्यार्थ्यांना सशक्त, सुसंस्कृत आणि स्वावलंबी नागरिक म्हणून घडवणे. ग्रामीण शिक्षण, व्यसनमुक्त समाज, नैतिक मूल्यांचे शिक्षण आणि सर्वांगीण विकास ही या दृष्टिकोनाची मुख्य तत्त्वे आहेत. शिक्षण हा समाज उन्नतीचा एकमेव प्रभावी मार्ग आहे, ही संकल्पना बाळगून संस्था सतत गुणवत्तापूर्ण आणि विद्यार्थीकेंद्रित उपक्रम राबवत आहे.'}
               </p>
-              <img src="/images/5.png" alt="Our Vision Bottom" className="section-image bottom" />
+              {/* <img src="/images/5.png" alt="Our Vision Bottom" className="section-image bottom" /> */}
             </div>
             
             <div className="section">
@@ -167,7 +173,7 @@ export default function HeroSection({ currentLang, setCurrentLang }) {
                   ? "The mission of Rajarshi Shahu Shikshan Sanstha is to bring underprivileged, poor, and economically distressed children—especially those from rural areas and families of farmers affected by suicide—into the mainstream of education, empowering them to become self-respecting and self-reliant individuals. Through technical education, industrial training, physical fitness, moral education, and teachings rooted in the Warkari tradition, the institution imparts not only academic knowledge but also core life values. Its goal is to inspire students towards a de-addiction mindset, fostering a positive outlook and a socially responsible perspective. This education focuses not just on academics but also on holistic personality development."
                   : 'राजर्षी शाहू शिक्षण संस्थेचे मिशन म्हणजे ग्रामीण भागातील गरजू, गरीब, आत्महत्याग्रस्त शेतकऱ्यांची मुले आणि आर्थिकदृष्ट्या अडचणीत असलेल्या मुलांना शिक्षणाच्या प्रवाहात आणून त्यांना स्वाभिमानी व स्वावलंबी बनवणे. संस्था तंत्रनिकेतन, औद्योगिक प्रशिक्षण, शारीरिक व्यायाम, नैतिकता आणि वारकरी संप्रदायाच्या शिक्षणाच्या माध्यमातून विद्यार्थ्यांना केवळ शिक्षणच नव्हे तर जीवनातील मूल्यांचे बाळकडू देते. विद्यार्थ्यांमध्ये व्यसनमुक्तीची प्रेरणा निर्माण करून त्यांना सकारात्मक विचारसरणी आणि समाज उपयोगी दृष्टिकोन देणे हे संस्थेचे ध्येय आहे. हे शिक्षण केवळ ज्ञान देणारे नसून व्यक्तिमत्व विकासावर आधारित आहे'}
               </p>
-              <img src="/images/5.png" alt="Our Mission Bottom" className="section-image bottom" />
+              {/* <img src="/images/5.png" alt="Our Mission Bottom" className="section-image bottom" /> */}
             </div>
           </section>
 

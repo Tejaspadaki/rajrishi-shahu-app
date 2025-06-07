@@ -4,6 +4,8 @@
   align-items: center;
   padding: 1rem 2rem;
   font-family: 'Georgia', serif;
+  position: relative;
+  z-index: 100;
 }
 
 .nav-left {
@@ -37,9 +39,11 @@
   align-items: center;
 }
 
+/* Desktop Language Button */
 #langButton {
   display: flex;
   align-items: center;
+  width: auto;
   gap: 0.5rem;
   border: 2px solid #502D18;
   border-radius: 10px;
@@ -56,11 +60,17 @@
   background: #f0d9b4;
 }
 
-.lang-icon {
-  font-size: 1.2rem;
+.lang-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
-/* Hamburger */
+.lang-icon {
+  font-size: 1.5rem;
+}
+
+/* Hamburger Menu Icon */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -95,7 +105,7 @@
   transform: rotate(-45deg);
 }
 
-/* Responsive */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -112,6 +122,7 @@
     text-align: center;
     padding: 1rem 0;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 99;
   }
 
   .nav-links.active {
@@ -124,16 +135,41 @@
     width: 100%;
   }
 
+  /* Hide desktop lang button on mobile */
   .nav-right {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
+    display: none;
+  }
+
+  /* Mobile language switch button */
+  .nav-links .lang-mobile-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .lang-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid #502D18;
+    border-radius: 10px;
+    background: #f5e3c0;
+    color: #502D18;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .lang-mobile:hover {
+    background: #f0d9b4;
   }
 }
 
-
-.lang-img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
+/* Hide mobile lang button on desktop */
+@media (min-width: 769px) {
+  .lang-mobile-wrapper {
+    display: none !important;
+  }
 }

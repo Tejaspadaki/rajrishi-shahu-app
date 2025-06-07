@@ -28,7 +28,7 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
     { path: '/about', en: 'About Us', mr: 'आमच्याबद्दल' },
     { path: '/institutions', en: 'Institutions', mr: 'संस्था' },
     { path: '/director-board', en: 'Director-Board', mr: 'संचालक मंडळ' },
-    { path: '/events', en: 'Gallery', mr: 'गॅलरी' },
+    { path: '/events', en: 'Events', mr: 'संस्थेने राबवलेले उपक्रम' },
     { path: '/contact', en: 'Contact Us', mr: 'संपर्क करा' },
   ];
 
@@ -58,9 +58,23 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
                     </Link>
                   </li>
                 ))}
+
+                {/* Mobile Lang Button */}
+                <li className="lang-mobile-wrapper">
+                  <button
+                    className="lang-mobile"
+                    onClick={switchLanguage}
+                    type="button"
+                    aria-label={currentLang === 'en' ? 'Switch to Marathi' : 'Switch to English'}
+                  >
+                    <img src="/images/Translation.png" alt="Translation" className="lang-img" />
+                    <span>{currentLang === 'en' ? 'English' : 'मराठी'}</span>
+                  </button>
+                </li>
               </ul>
             </div>
 
+            {/* Desktop Lang Button */}
             <div className="nav-right">
               <button
                 id="langButton"
@@ -72,7 +86,6 @@ const Navbar = ({ currentLang, setCurrentLang }) => {
                 <span>{currentLang === 'en' ? 'English' : 'मराठी'}</span>
               </button>
             </div>
-
           </nav>
         </div>
       </section>

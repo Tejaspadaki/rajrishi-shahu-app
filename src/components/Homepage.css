@@ -748,10 +748,11 @@
 }
 
 
-.aadarsh-container{
+.aadarsh-container {
   position: relative;
   bottom: 475px;
-  }
+}
+
 .aai-page {
   min-height: 100vh;
   font-family: 'Playfair Display', serif;
@@ -766,22 +767,32 @@
   font-weight: bold;
 }
 
-.aai-cards {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+/* Carousel Wrapper */
+.aai-carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
   margin-bottom: 2rem;
 }
 
-.aai-card {
-  width: 160px;
-  height: 220px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Scrolling Cards Container */
+.aai-cards {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollX 30s linear infinite;
 }
 
+/* Single Card - larger and taller */
+.aai-card {
+  min-width: 250px;
+  height: 280px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+/* Description */
 .aai-description {
   max-width: 700px;
   margin: 0 auto;
@@ -790,10 +801,20 @@
   color: #57321F;
 }
 
+/* Animation Keyframes */
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 1024px) {
   .aadarsh-container {
-    bottom: 450px; /* adjust vertical positioning */
+    bottom: 450px;
   }
 
   .aai-title {
@@ -801,13 +822,9 @@
     margin-bottom: 1.5rem;
   }
 
-  .aai-cards {
-    gap: 1.5rem;
-  }
-
   .aai-card {
-    width: 140px;
-    height: 190px;
+    min-width: 220px;
+    height: 310px;
   }
 
   .aai-description {
@@ -816,7 +833,7 @@
   }
 }
 
-/* Small devices (tablets and small screens, below 768px) */
+/* Small devices (below 768px) */
 @media (max-width: 768px) {
   .aadarsh-container {
     bottom: 320px;
@@ -829,16 +846,12 @@
   }
 
   .aai-cards {
-    flex-direction: column;
     gap: 1.25rem;
   }
 
   .aai-card {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 0 auto;
-    padding: 1rem;
+    min-width: 200px;
+    height: 280px;
   }
 
   .aai-description {
@@ -847,7 +860,7 @@
   }
 }
 
-/* Extra small devices (mobile phones, below 480px) */
+/* Extra small devices (below 480px) */
 @media (max-width: 480px) {
   .aadarsh-container {
     bottom: 0px;
@@ -864,10 +877,8 @@
   }
 
   .aai-card {
-    width: 100%;
-    max-width: 280px;
-    height: 93px;
-    padding: 0.75rem;
+    min-width: 180px;
+    height: 250px;
   }
 
   .aai-description {
@@ -878,57 +889,71 @@
 }
 
 
+
 .adoption-section {
-  /* background-color: #fbe7c0; light peachy background */
-  padding: 2rem 4rem;
+  padding: 2rem;
   font-family: 'Georgia', serif;
+  /* background-color: #fdf5ee; */
   position: relative;
-  bottom: 455px;
+  bottom: 458px;
 }
 
 .adoption-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10rem;
+  gap: 3rem;
   max-width: 1300px;
-  margin: auto;
+  margin: 0 auto;
   flex-wrap: wrap;
 }
 
 .adoption-image {
   flex: 1;
   min-width: 300px;
-  min-height: 711px;
-  background-color: white;
+  min-height: 770px;
+  /* background-color: white; */
   border-radius: 12px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  background-image: url('/images/bhaiyaa 1.png'); /* Set your image path here */
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  left: -57px;
+}
+
+.adoption-image:hover {
+  transform: scale(1.02);
 }
 
 .adoption-content {
   flex: 1;
   min-width: 300px;
-  color: #000;
+  color: #57321F;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .adoption-title {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.3;
-  color: #57321F;
 }
 
 .adoption-description {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #57321F;
+  white-space: pre-line; /* Maintains \n line breaks */
 }
 
-/* Medium devices (tablets, <= 1024px) */
+/* Tablet devices */
 @media (max-width: 1024px) {
   .adoption-container {
-    gap: 4rem;
-    padding: 0 2rem;
+    gap: 2rem;
+    padding: 0 1rem;
   }
 
   .adoption-title {
@@ -944,12 +969,11 @@
   }
 }
 
-/* Small devices (phones, <= 768px) */
+/* Phones */
 @media (max-width: 768px) {
   .adoption-container {
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
   }
 
   .adoption-image,
@@ -958,29 +982,24 @@
     max-width: 100%;
   }
 
+  .adoption-title,
+  .adoption-description {
+    text-align: center;
+  }
+
   .adoption-title {
     font-size: 1.8rem;
-    text-align: center;
   }
 
   .adoption-description {
     font-size: 0.95rem;
-    text-align: center;
-  }
-
-  .adoption-section {
-    padding: 2rem;
-    position: relative;
-    bottom: 40px;
   }
 }
 
-/* Extra small devices (<= 480px) */
+/* Extra small devices */
 @media (max-width: 480px) {
   .adoption-title {
     font-size: 1.6rem;
-    position: relative;
-    top: -434px;
   }
 
   .adoption-description {
@@ -989,17 +1008,14 @@
 
   .adoption-image {
     min-height: 400px;
-    position: relative;
-    top: 70px;
   }
 }
-
 
 
 /* Base styles you gave */
 .footer-1 {
   position: relative;
-  bottom: 586px;
+  bottom: 560px;
 }
 
 .footer-2 {

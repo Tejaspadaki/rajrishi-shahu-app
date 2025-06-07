@@ -6,7 +6,7 @@ import './css/gallery.css';
 const Gallery = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   const selectedCategory = Data.find(category =>
@@ -29,25 +29,36 @@ const Gallery = () => {
     );
   }
 
-  const handleImageClick = (item) => {
-    setSelectedImage(item);
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index);
     setShowModal(true);
   };
 
   const closeModal = () => {
     setShowModal(false);
+    setSelectedImageIndex(null);
   };
+
+  const handlePrev = () => {
+    setSelectedImageIndex((prev) => (prev === 0 ? selectedCategory.images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setSelectedImageIndex((prev) => (prev === selectedCategory.images.length - 1 ? 0 : prev + 1));
+  };
+
+  const currentImage = selectedCategory.images[selectedImageIndex];
 
   return (
     <section className="gallery-container">
       <h2 className="gallery-title">{selectedCategory.name1}</h2>
 
       <div className="image-grid gallery">
-        {selectedCategory.images.map((item) => (
+        {selectedCategory.images.map((item, index) => (
           <div
             key={item.id}
             className="gallery-item"
-            onClick={() => handleImageClick(item)}
+            onClick={() => handleImageClick(index)}
           >
             <img
               src={item.imgSrc}
@@ -58,25 +69,23 @@ const Gallery = () => {
                 e.target.alt = 'Image not available';
               }}
             />
-            {/* Optional: Show title */}
-            {/* {item.imgTitle && <p className="image-title">{item.imgTitle}</p>} */}
           </div>
         ))}
       </div>
 
-      {showModal && selectedImage && (
+      {showModal && currentImage && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={closeModal}>×</button>
+
+            {/* Navigation Arrows */}
+            <button className="nav-button prev-button" onClick={handlePrev}>←</button>
             <img
-              src={selectedImage.imgSrc}
-              alt={selectedImage.imgTitle || 'Preview'}
+              src={currentImage.imgSrc}
+              alt={currentImage.imgTitle || 'Preview'}
               className="modal-image"
             />
-            {/* <div className="image-details">
-              <h3>{selectedImage.imgTitle}</h3>
-              <p>{selectedImage.imgData}</p>
-            </div> */}
+            <button className="nav-button next-button" onClick={handleNext}>→</button>
           </div>
         </div>
       )}

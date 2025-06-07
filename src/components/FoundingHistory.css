@@ -131,7 +131,15 @@
     height: 120px;
     object-fit: contain;
     margin-bottom: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* shows it's clickable */
   }
+  
+  .info-block img:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
+  }
+  
   
   .info-block p {
     font-size: 1rem;
