@@ -1,148 +1,151 @@
 /* Common styles */
 .year-card {
-    border-radius: 20px;
-    padding: 1.5rem;
-    width: 300px;
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Inactive background */
-  .year-card.inactive {
-    background-color: #f5ddb2;
-    color: #3b2f2f;
-  }
-  
-  /* Active background */
-  .year-card.active {
-    background-color: #143d52;
-    color: #fff;
-    z-index: 5;
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  }
-  
-  /* On hover, bring card slightly forward */
-  .year-card:hover {
-    transform: scale(1.05);
-    z-index: 3;
-  }
-  
-  /* Reset hover scale for active (so no conflict) */
-  .year-card.active:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Other styles remain the same */
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 300px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+/* Inactive background */
+.year-card.inactive {
+  background-color: #f5ddb2;
+  color: #3b2f2f;
+}
+
+/* Active background */
+.year-card.active {
+  background-color: #143d52;
+  color: #fff;
+  z-index: 5;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* On hover, bring card slightly forward */
+.year-card:hover {
+  transform: scale(1.05);
+  z-index: 3;
+}
+
+/* Prevent scale conflict for active */
+.year-card.active:hover {
+  transform: scale(1.1);
+}
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.year-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.year-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.history-section {
+  padding: 2rem;
+  font-family: 'Georgia', serif;
+  text-align: center;
+}
+
+.history-title {
+  font-size: 2.5rem;
+  color: #3b2f2f;
+  margin-bottom: 0.5rem;
+}
+
+.history-decorator {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.history-decorator img {
+  width: 80px;
+}
+
+.history-separator {
+  width: 90%;
+  height: 2px;
+  background-color: #d2a24c;
+  border: none;
+  margin: 2rem auto;
+}
+
+/* Bottom Info Section */
+.bottom-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-block img {
+  width: 120px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.info-block img:hover {
+  transform: scale(1.05);
+}
+
+.info-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #184056;
+}
+
+.info-label {
+  font-size: 1rem;
+  color: #3b2f2f;
+  margin-top: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .timeline {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
-  
-  .year-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  .year-card p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  .history-section {
-    padding: 2rem;
-    /* background-color: #fef7ec; */
-    font-family: 'Georgia', serif;
-    text-align: center;
-  }
-  
-  .history-title {
-    font-size: 2.5rem;
-    color: #3b2f2f;
-    margin-bottom: 0.5rem;
-  }
-  
-  .history-decorator {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-  
-  .history-separator {
-    width: 90%;
-    height: 2px;
-    background-color: #d2a24c;
-    border: none;
-    margin: 2rem auto;
-  }
-  
-  .bottom-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 2rem 0;
   }
-  
-  .bottom-info p {
-    font-size: 1rem;
-    color: #3b2f2f;
+
+  .year-card {
+    width: 90%;
   }
-  
-  .trophy {
-    font-size: 2.5rem;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .timeline {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .year-card {
-      width: 90%;
-    }
-  
-    .bottom-info {
-      grid-template-columns: 1fr;
-    }
-  }
-  
 
   .bottom-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 0;
+    grid-template-columns: 1fr;
   }
-  
+
   .info-block img {
-    width: 150px;
-    height: 120px;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; /* shows it's clickable */
+    width: 100px;
+    height: 80px;
   }
-  
-  .info-block img:hover {
-    transform: scale(1.05);
-    /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
+
+  .info-number {
+    font-size: 1.6rem;
   }
-  
-  
-  .info-block p {
-    font-size: 1rem;
-    color: #3b2f2f;
-  }
-  
+}

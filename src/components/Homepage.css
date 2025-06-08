@@ -479,7 +479,8 @@
 /* For screens <= 480px (mobile phones) */
 @media (max-width: 480px) {
   .about-us-container {
-    top: -8px;
+    position: relative;
+    top: -128px;
     padding: 1rem;
   }
 
@@ -951,6 +952,10 @@
 
 /* Tablet devices */
 @media (max-width: 1024px) {
+  .adoption-section {
+    position: relative;
+    bottom: 458px;
+  }
   .adoption-container {
     gap: 2rem;
     padding: 0 1rem;
@@ -971,6 +976,10 @@
 
 /* Phones */
 @media (max-width: 768px) {
+  .adoption-section {
+    position: relative;
+    bottom: 458px;
+  }
   .adoption-container {
     flex-direction: column;
     align-items: center;
@@ -998,6 +1007,10 @@
 
 /* Extra small devices */
 @media (max-width: 480px) {
+  .adoption-section {
+    position: relative;
+    bottom: 28px;
+  }
   .adoption-title {
     font-size: 1.6rem;
   }
@@ -1015,7 +1028,7 @@
 /* Base styles you gave */
 .footer-1 {
   position: relative;
-  bottom: 560px;
+  bottom: 410px;
 }
 
 .footer-2 {
@@ -1201,7 +1214,7 @@
 }
 
 /* For screens <= 768px (tablets) */
-@media (max-width: 768px) {ad;m
+@media (max-width: 768px) {
   .app-background-1 {
     height: 300vh;
     background-size: cover;
