@@ -20,16 +20,6 @@ import bgImage from '/images/background.png';
 
 // Route components
 const Home = ({ currentLang }) => <HeroSection currentLang={currentLang} />;
-const News = () => (
-  <div className="page">
-    <h1>News & Events</h1>
-  </div>
-);
-const Gallery = () => (
-  <div className="page">
-    <h1>Gallery</h1>
-  </div>
-);
 
 // Component to wrap routes and check for background/footer conditions
 const AppContent = ({ currentLang, setCurrentLang }) => {
