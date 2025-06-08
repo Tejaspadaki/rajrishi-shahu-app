@@ -1201,7 +1201,7 @@
 }
 
 /* For screens <= 768px (tablets) */
-@media (max-width: 768px) {
+@media (max-width: 768px) {ad;m
   .app-background-1 {
     height: 300vh;
     background-size: cover;
@@ -1212,8 +1212,8 @@
 /* For screens <= 480px (mobile phones) */
 @media (max-width: 480px) {
   .app-background-1 {
-    height: 1635vh;
-    width: 469px;
+    height: 1265vh;
+    width: 467px;
     background-size: cover;
     background-position: center;
   }

@@ -1,12 +1,11 @@
-/* Gallery Container */
+/* ========== GALLERY CONTAINER ========== */
 .gallery-container {
   padding: 2rem;
   font-family: 'Segoe UI', sans-serif;
-  /* background-color: #fff8f2; */
   text-align: center;
 }
 
-/* Gallery Title */
+/* ========== TITLE ========== */
 .gallery-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -14,29 +13,26 @@
   font-weight: 700;
 }
 
-/* Carousel Wrapper */
+/* ========== CAROUSEL ========== */
 .gallery-carousel-wrapper {
   overflow-x: hidden;
   cursor: grab;
   margin-bottom: 2rem;
-  user-select: none; /* Disable text selection while dragging */
+  user-select: none;
   position: relative;
 }
 
-/* Change cursor while dragging */
 .gallery-carousel-wrapper:active {
   cursor: grabbing;
 }
 
-/* Carousel Cards Container */
 .gallery-cards {
   display: flex;
   gap: 2rem;
   width: max-content;
-  /* no animation here since we use JS scroll */
 }
 
-/* Single Card */
+/* ========== CARD ========== */
 .gallery-card {
   min-width: 250px;
   height: 280px;
@@ -52,7 +48,6 @@
   transform: scale(1.03);
 }
 
-/* Image inside Card */
 .gallery-card img {
   width: 100%;
   height: 100%;
@@ -61,7 +56,7 @@
   display: block;
 }
 
-/* Modal Overlay */
+/* ========== MODAL ========== */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -75,7 +70,6 @@
   z-index: 1000;
 }
 
-/* Modal Content */
 .modal-content {
   position: relative;
   background: #ffffff;
@@ -85,19 +79,49 @@
   max-height: 90%;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
+/* Modal Image */
 .modal-image {
   max-height: 70vh;
   max-width: 100%;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+  cursor: zoom-in;
 }
 
-/* Close Button */
+/* Zoomed Modal Image */
+.modal-image.zoomed {
+  transform: scale(1.8);
+  cursor: zoom-out;
+}
+
+/* Modal Caption */
+.modal-caption {
+  max-width: 100%;
+  text-align: center;
+}
+
+.modal-caption h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #502D18;
+  margin: 0;
+}
+
+.modal-caption p {
+  margin-top: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ========== BUTTONS ========== */
 .close-button {
   position: absolute;
   top: 12px;
@@ -108,9 +132,9 @@
   color: #502D18;
   font-weight: bold;
   cursor: pointer;
+  z-index: 1100;
 }
 
-/* Lightbox Navigation Arrows */
 .nav-button {
   position: absolute;
   top: 50%;
@@ -138,7 +162,28 @@
   right: -2.5rem;
 }
 
-/* Error message for missing category */
+/* ========== DESCRIPTION BOX ========== */
+.gallery-description-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #fff9f1;
+  border-left: 6px solid #502D18;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(80, 45, 24, 0.1);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #502D18;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: justify;
+}
+
+/* ========== ERROR HANDLING ========== */
 .error-message {
   text-align: center;
   margin-top: 3rem;
@@ -146,7 +191,7 @@
   color: #502D18;
 }
 
-/* Responsive Design */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .gallery-title {
     font-size: 2rem;
@@ -189,25 +234,4 @@
     min-width: 180px;
     height: 250px;
   }
-}
-
-
-.gallery-description-box {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: #fff9f1;
-  border-left: 6px solid #502D18;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(80, 45, 24, 0.1);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.gallery-description {
-  font-size: 1.125rem; /* text-lg */
-  line-height: 1.8;
-  color: #502D18;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: justify;
 }

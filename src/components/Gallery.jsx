@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Data } from './Data';
+import eventData from './Data';
 import './css/gallery.css';
 
-const Gallery = ({ language = 'mr' }) => {
+const Gallery = ({ currentLang = 'mr' }) => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
 
@@ -15,19 +15,22 @@ const Gallery = ({ language = 'mr' }) => {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
-  const selectedCategory = Data.find(category => category.id.toString() === categoryId);
+  const events = eventData[currentLang]?.events || [];
+  const selectedCategory = events.find(
+    (category) => category.id.toString() === categoryId
+  );
 
   if (!selectedCategory) {
     return (
       <div className="error-message">
         <div className="text-center py-6 text-3xl font-bold text-[#502D18]">
-          {language === 'mr' ? 'वर्ग सापडला नाही' : 'Category not found'}
+          {currentLang === 'mr' ? 'वर्ग सापडला नाही' : 'Category not found'}
         </div>
         <button
           onClick={() => navigate(-1)}
           className="mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-[#502D18]"
         >
-          ← {language === 'mr' ? 'कार्यक्रमांकडे परत जा' : 'Back to Events'}
+          ← {currentLang === 'mr' ? 'कार्यक्रमांकडे परत जा' : 'Back to Events'}
         </button>
       </div>
     );
@@ -59,7 +62,6 @@ const Gallery = ({ language = 'mr' }) => {
     startX.current = e.pageX - scrollRef.current.offsetLeft;
     scrollLeft.current = scrollRef.current.scrollLeft;
   };
-
   const onMouseLeave = () => { isDragging.current = false; };
   const onMouseUp = () => { isDragging.current = false; };
   const onMouseMove = (e) => {
@@ -94,11 +96,15 @@ const Gallery = ({ language = 'mr' }) => {
   };
 
   const handlePrev = () => {
-    setSelectedImageIndex((prev) => (prev === 0 ? selectedCategory.images.length - 1 : prev - 1));
+    setSelectedImageIndex((prev) =>
+      prev === 0 ? selectedCategory.images.length - 1 : prev - 1
+    );
   };
 
   const handleNext = () => {
-    setSelectedImageIndex((prev) => (prev === selectedCategory.images.length - 1 ? 0 : prev + 1));
+    setSelectedImageIndex((prev) =>
+      prev === selectedCategory.images.length - 1 ? 0 : prev + 1
+    );
   };
 
   const currentImage = selectedCategory.images[selectedImageIndex];
@@ -106,7 +112,7 @@ const Gallery = ({ language = 'mr' }) => {
 
   return (
     <section className="gallery-container">
-      <h2 className="gallery-title">{selectedCategory.name[language]}</h2>
+      <h2 className="gallery-title">{selectedCategory.name}</h2>
 
       <div
         className="gallery-carousel-wrapper"
@@ -124,14 +130,19 @@ const Gallery = ({ language = 'mr' }) => {
             <div
               key={`${item.id}-${index}`}
               className="gallery-card"
-              onClick={() => handleImageClick(index % selectedCategory.images.length)}
+              onClick={() =>
+                handleImageClick(index % selectedCategory.images.length)
+              }
             >
               <img
                 src={item.imgSrc}
-                alt={item.imgTitle[language] || `Image ${item.id}`}
+                alt={item.imgTitle}
                 onError={(e) => {
                   e.target.src = '/images/fallback.jpg';
-                  e.target.alt = language === 'mr' ? 'प्रतिमा उपलब्ध नाही' : 'Image not available';
+                  e.target.alt =
+                    currentLang === 'mr'
+                      ? 'प्रतिमा उपलब्ध नाही'
+                      : 'Image not available';
                 }}
               />
             </div>
@@ -140,7 +151,9 @@ const Gallery = ({ language = 'mr' }) => {
       </div>
 
       <div className="gallery-description-box">
-        <p className="gallery-description">{selectedCategory.description[language]}</p>
+        <p className="gallery-description">
+          {selectedCategory.description}
+        </p>
       </div>
 
       {showModal && currentImage && (
@@ -150,7 +163,7 @@ const Gallery = ({ language = 'mr' }) => {
             <button className="nav-button prev-button" onClick={handlePrev}>←</button>
             <img
               src={currentImage.imgSrc}
-              alt={currentImage.imgTitle[language] || 'Preview'}
+              alt={currentImage.imgTitle}
               className="modal-image"
             />
             <button className="nav-button next-button" onClick={handleNext}>→</button>
