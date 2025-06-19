@@ -1,4 +1,4 @@
-/* Common styles */
+/* Card styles */
 .year-card {
   border-radius: 20px;
   padding: 1.5rem;
@@ -8,52 +8,68 @@
   cursor: pointer;
   position: relative;
   z-index: 1;
-}
-
-/* Inactive background */
-.year-card.inactive {
   background-color: #f5ddb2;
   color: #3b2f2f;
 }
 
-/* Active background */
 .year-card.active {
   background-color: #143d52;
   color: #fff;
-  z-index: 5;
   transform: scale(1.1);
+  z-index: 5;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* On hover, bring card slightly forward */
 .year-card:hover {
   transform: scale(1.05);
   z-index: 3;
 }
 
-/* Prevent scale conflict for active */
-.year-card.active:hover {
-  transform: scale(1.1);
-}
-
 .timeline {
   display: flex;
   justify-content: center;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
-.year-card h3 {
-  font-size: 1.8rem;
+/* Stage details fade in */
+.stage-details {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.event-block {
+  background-color: #fffbe6;
+  border-left: 5px solid #d2a24c;
+  padding: 1rem 1.5rem;
   margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.year-card p {
+.event-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #143d52;
+  margin-bottom: 0.25rem;
+}
+
+.event-desc {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  white-space: pre-line;
+  color: #3b2f2f;
 }
 
+/* Section and headers */
 .history-section {
   padding: 2rem;
   font-family: 'Georgia', serif;
@@ -66,14 +82,9 @@
   margin-bottom: 0.5rem;
 }
 
-.history-decorator {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
 .history-decorator img {
   width: 80px;
+  margin-bottom: 2rem;
 }
 
 .history-separator {
@@ -84,14 +95,13 @@
   margin: 2rem auto;
 }
 
-/* Bottom Info Section */
+/* Bottom Info Cards */
 .bottom-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
-  align-items: center;
-  text-align: center;
   padding: 2rem 0;
+  text-align: center;
 }
 
 .info-block {
@@ -147,5 +157,9 @@
 
   .info-number {
     font-size: 1.6rem;
+  }
+
+  .stage-details {
+    padding: 0 1rem;
   }
 }
